@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title - Portfolio</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="container">
+            <div class="nav-left">
+                <a href="index.html" class="logo">ROBERTO PARIENTE</a>
+            </div>
+            <nav class="nav-center">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                    <li><a href="portfolio.html">PORTFOLIO</a></li>
+                </ul>
+            </nav>
+            <div class="nav-right">
+                <!-- <a href="#" class="dark-mode-toggle">Dark Mode</a> -->
+                <img class="dark-mode-toggle-img" src="assets/images/day-mode-icon.png" alt="Toggle Dark Mode">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Project Content -->
+    <section class="project-container">
+        <div class="project-header">
+            <h1>Building a Neural Network from Scratch</h1>
+            <p>Built a simple Neural Network from scratch in Python to understand the core principles of deep learning,
+                including forward propagation, backpropagation, and gradient descent.</p>
+        </div>
+    </section>
+
+    <section class="project-sections">
+        <section id="description">
+            <h2>Project Description</h2>
+            <p>In this project, I implemented a basic Neural Network from scratch in Python to gain a deeper understanding 
+                of how deep learning models work under the hood. By constructing each component, from initializing weights 
+                and biases to implementing forward propagation, backpropagation, and gradient descent, I was able to demystify
+                the complex processes that power Neural Networks. The project involved training the model on a small dataset, 
+                tuning hyperparameters, and visualizing the learning process, providing valuable insights into the fundamentals 
+                of machine learning and the challenges of model optimization. This hands-on experience has laid a solid foundation
+                for exploring more advanced deep learning architectures and frameworks.</p>
+        </section>
+
+        <section id="methodology">
+            <h2>Methodology</h2>
+            <p>Neural Networks are computational models inspired by the human brain, designed to recognize patterns and make decisions based on input data. They are composed of layers of interconnected nodes, or "neurons," which process and transform the data they receive. Here's a breakdown of the key concepts:</p>
+            <ol>
+                <li>
+                    <h3>Neurons</h3>
+                    <p>A neuron in a Neural Network is a mathematical function that receives one or more inputs, applies weights and a bias, and then passes the result through an activation function. The purpose of this process is to introduce non-linearity into the model, allowing it to learn complex patterns.
+                        Insert photo explaining neurons, weights, biases, and activation functions</p>
+
+                </li>       
+                <li>
+                    <h3>Layers in Neural Networks</h3>
+                    <p>Neural Networks are organized into layers:
+                        - Input Layer: The first layer receives the raw data. Each neuron in this layer represents a feature of the input data.
+                        - Hidden Layers: These are intermediate layers where the actual learning occurs. The network can have multiple hidden layers, each transforming the input data into increasingly abstract representations.
+                        - Output Layer: The final layer produces the output, which could be a classification, regression value, or any other prediction.
+                        Insert photo showing a basic Neural Network architecture with input, hidden, and output layers</p>
+                </li>
+                
+                <li>
+                    <h3>Forward Propagation</h3>
+                    <p>Forward propagation is the process of passing input data through the network layer by layer. Each neuron receives inputs, applies weights, and produces an output that becomes the input for the next layer. This process continues until the data reaches the output layer, where the network's prediction is made.</p>
+                </li>
+                
+                <li>
+                    <h3>Loss Function</h3>
+                    <p>The loss function quantifies how well the network's predictions match the actual target values. Common loss functions include Mean Squared Error (for regression tasks) and Cross-Entropy Loss (for classification tasks). The goal during training is to minimize this loss.</p>
+                </li>
+                
+                <li>
+                    <h3>Backpropagation and Gradient Descent</h3>
+                    <p>Backpropagation is the mechanism by which the network learns from its mistakes. It calculates the gradient of the loss function with respect to each weight in the network, essentially figuring out how much each weight contributed to the error. Gradient descent is then used to adjust the weights, reducing the loss step by step.
+                        Gradient Descent: This is an optimization algorithm that iteratively adjusts the weights to minimize the loss function. The learning rate controls the size of the steps taken during this process.
+                        Insert photo showing backpropagation and gradient descent process</p>
+                </li>
+            </ol>
+        </section>
+
+        <section id="code">
+            <h2>Code</h2>
+            <p>Dense Class:</p>
+                
+<pre><code>class Dense: 
+    def __init__(self, dense_type, num_neurons, activation_type, input_shape):
+        self.layer_type        = 'Dense'
+        self.dense_type        = dense_type
+        self.num_neurons       = num_neurons
+        self.activation_type   = activation_type
+        self.input_shape       = input_shape
+        self.output_shape      = num_neurons
+        self.input             = None
+        self.output            = None
+        self.A                 = None
+        self.Z                 = None
+        np.random.seed(42)
+        self.W                 = np.random.randn(self.input_shape, self.num_neurons) * 0.01
+        self.b                 = np.zeros((1, self.num_neurons))
+        self.dcW               = np.zeros_like(self.W)
+        self.dcb               = np.zeros_like(self.b)
+        self.delta             = []
+        self.activation_func, self.activation_der = CNN().get_activation_function(self.activation_type)
+
+        
+    def forward_propagation(self, input):
+        
+        self.input = input
+        self.Z = np.dot(input, self.W) + self.b
+        self.A = self.activation_func(self.Z)
+        self.output = self.A    
+        return self.A
+    
+    def back_propagation(self, label, W_next_layer, delta_next_layer):
+        
+        #activation_func, activation_der = CNN().get_activation_function(self.activation_type)
+        
+        if self.dense_type == 'output':
+
+            if self.activation_type == 'softmax':
+                self.delta = self.A - label
+            else:
+                self.delta = (self.A - label) * self.activation_der(self.Z)
+
+        else:
+            self.delta = np.dot(W_next_layer, delta_next_layer) * self.activation_der(self.Z)
+            
+        dcW = np.outer(self.input, self.delta)
+        dcb = self.delta
+
+        self.dcW += dcW
+        self.dcb += dcb
+        return self.W, self.delta
+    
+    def update(self, learning_rate, batch_size):
+        self.W -= learning_rate * self.dcW / batch_size
+        self.b -= learning_rate * self.dcb / batch_size
+        
+    def reset_dcWdcb(self):
+        self.dcW = np.zeros_like(self.W)
+        self.dcb = np.zeros_like(self.b)
+</code></pre>
+
+<p>CNN Class:</p>
+                
+<pre><code>class CNN:
+    def __init__(self):
+        self.layers = []
+        
+    ## ----------------------- Activation functions and their derivatives ------------------------ ##
+    
+    def relu(self, Z):
+        return np.maximum(0, Z)
+    
+    def relu_derivative(self, Z):
+        return np.where(Z > 0, 1, 0)
+
+    def sigmoid(self, Z):
+        return 1 / (1 + np.exp(-Z))
+
+    def sigmoid_derivative(self, Z):
+        s = self.sigmoid(Z)
+        return s * (1 - s)
+
+    def linear(self, Z):
+        return Z
+
+    def linear_derivative(self, Z):
+        return np.ones_like(Z)
+    
+    def softmax(self, Z):
+        expZ = np.exp(Z - np.max(Z))  # Stability improvement
+        return expZ / expZ.sum(axis=1, keepdims=True)
+    
+    def get_activation_function(self, name):
+        if name == "relu":
+            return self.relu, self.relu_derivative
+        elif name == "sigmoid":
+            return self.sigmoid, self.sigmoid_derivative
+        elif name == "linear":
+            return self.linear, self.linear_derivative
+        elif name == "softmax":
+            return self.softmax, None # The derivative of softmax is handled differently for now.
+        else:
+            raise ValueError(f"Unknown activation function: {name}")
+
+
+    def cross_entropy_loss(self, outputs, labels):
+        m = labels.shape[0]
+        p = outputs
+        log_likelihood = -np.log(p[range(m), labels.argmax(axis=1)])
+        loss = np.sum(log_likelihood) / m
+        return loss
+    
+    def crosss_entropy_loss(self, outputs, labels):
+        return -np.mean(np.sum(labels * np.log(outputs + 1e-9), axis=1))
+
+    def mse_loss(self, outputs, labels):
+        return np.mean(np.square(outputs - labels))
+    ## ------------------------------------- Adding layers --------------------------------------------- ##
+
+    def add(self, layer_class, num_filters = None, filter_size = None, num_neurons = None, dense_type = None, input_shape = None, activation_type = None, pooling_size = None, pooling_type = None):
+        if len(self.layers) == 0:
+            if layer_class == 'Conv2D':
+                layer = Conv2DLayer(num_filters, filter_size, input_shape)
+                self.layers.append({'layer_id': len(self.layers) + 1,
+                                    'layer_type': 'Conv2D',
+                                    'num_filters': layer.num_filters,
+                                    'filter_size': layer.filter_size,
+                                    'input_shape': layer.input_shape,
+                                    'output_shape': layer.output_shape,
+                                    'layer': layer
+                                   })
+            elif layer_class == 'Dense':
+                layer = Dense(dense_type, num_neurons, activation_type, input_shape)
+                self.layers.append({'layer_id': len(self.layers) + 1,
+                                    'layer_type': 'Dense',
+                                    'dense_type': dense_type,
+                                    'input_shape': layer.input_shape,
+                                    'output_shape': layer.output_shape,
+                                    'layer': layer
+                                   })
+        else:
+            if layer_class == 'Conv2D':
+                layer = Conv2DLayer(num_filters, filter_size, self.layers[-1]['output_shape'])
+                self.layers.append({'layer_id': len(self.layers) + 1,
+                                    'layer_type': layer.layer_type,
+                                    'num_filters': layer.num_filters,
+                                    'filter_size': layer.filter_size,
+                                    'input_shape': layer.input_shape,
+                                    'output_shape': layer.output_shape,
+                                    'layer': layer
+                                   })
+            elif layer_class == 'Activation':
+                layer = ActivationLayer(activation_type, self.layers[-1]['output_shape'])
+                self.layers.append({'layer_id': len(self.layers) + 1,
+                                    'layer_type': layer.layer_type,
+                                    'input_shape': layer.input_shape,
+                                    'output_shape': layer.output_shape,
+                                    'layer': layer
+                                   })
+            elif layer_class == 'Pooling':
+                layer = PoolingLayer(pooling_type, pooling_size, self.layers[-1]['output_shape'])
+                self.layers.append({'layer_id': len(self.layers) + 1,
+                                    'layer_type': layer.layer_type,
+                                    'input_shape': layer.input_shape,
+                                    'output_shape': layer.output_shape,
+                                    'layer': layer
+                                   })
+            elif layer_class == 'Flattening':
+                layer = FlatteningLayer(self.layers[-1]['output_shape'])
+                self.layers.append({'layer_id': len(self.layers) + 1,
+                                    'layer_type': layer.layer_type,
+                                    'input_shape': layer.input_shape,
+                                    'output_shape': layer.output_shape,
+                                    'layer': layer
+                                   })
+            elif layer_class == 'Dense':
+                if self.layers[-1]['layer_type'] == 'Dense':
+                    input_shape = self.layers[-1]['output_shape']
+                else:
+                    input_shape = np.prod(self.layers[-1]['output_shape'])
+                
+                layer = Dense(dense_type, num_neurons, activation_type, input_shape)
+                self.layers.append({'layer_id': len(self.layers) + 1,
+                                    'layer_type': layer.layer_type,
+                                    'input_shape': layer.input_shape,
+                                    'output_shape': layer.output_shape,
+                                    'layer': layer
+                                   })
+                
+    
+    ## ---------------------------------------- Forward Propagation --------------------------------- ##
+    
+    def forward_propagation(self, input):
+        output = []
+        for layer in self.layers:
+            input = layer['layer'].forward_propagation(input)
+            output.append(input)
+            
+            #print(layer['layer_type'],':')
+            #print(input)
+            #print('\n')
+        return output
+    
+    def flattening(self, input):
+        return np.expand_dims(np.squeeze(input.reshape(-1,1)),axis=0)
+
+    def back_propagation(self, label):
+        
+        dInput = []
+        W_next_layer = []
+        delta_next_layer = []
+        W_next_layer = np.array([0])
+        delta_next_layer = np.array([0])
+        for layer in reversed(self.layers):    
+            
+            if layer['layer_type'] == 'Dense':
+                
+                W_next_layer, delta_next_layer = layer['layer'].back_propagation(label, W_next_layer, delta_next_layer[0])
+
+                
+                #dInput.append(dOutput)
+                #print(layer['layer_type'],':')
+                #print(dOutput)
+                #print('\n')
+            
+            elif layer['layer_type'] == 'Flattening':
+                dOutput = layer['layer'].back_propagation(W_next_layer, delta_next_layer)
+                dInput.append(dOutput)
+
+            else:
+                dOutput = layer['layer'].back_propagation(dOutput)
+                dInput.append(dOutput)
+                #print(layer['layer_type'],':')
+                #print(dOutput)
+                #print('\n')
+
+        return dInput
+    
+
+    def train(self, inputs, labels, epochs, learning_rate, batch_size, progress_show = False, log_show = True):
+        
+        m = labels.shape[0]
+        indices = np.arange(m)
+        progress_step = 1000
+        if m < progress_step:
+            progress_step = m
+            
+        for i in range(0, epochs):
+            time_0 = time.time()
+            #pred = np.zeros_like(labels)
+            progress = 1
+
+            for start_idx in range(0, m, batch_size):
+                end_idx = min(start_idx + batch_size, m)
+                batch_indices = indices[start_idx:end_idx]
+
+                for layer in self.layers:
+                    layer['layer'].reset_dcWdcb()
+                
+                for sample_id in batch_indices:
+
+                    output_sample = labels[sample_id]
+                    input_sample  = inputs[sample_id]
+                    
+                    output = self.forward_propagation(input_sample)
+            
+                    self.back_propagation(output_sample)
+                    
+                    if progress % (m/progress_step) == 0 and progress_show:
+                        self.progress_bar(progress, m, time_0)
+                        
+                    progress += 1
+
+                self.update(learning_rate, batch_size)
+
+            print('\n')
+            time_back = time.time()
+            time_pred = time.time()
+            if log_show:
+                self.pred, acc = self.predict(inputs, labels)
+                loss = self.crosss_entropy_loss(self.pred, labels)
+                print(f'Epoch: {i+1}, Accuracy: {acc*100 :.2f}%, Time: {time.time()-time_0 :1.4f} s, Loss: {loss :1.4f}, Time back: {time_back-time_0 :1.4f} s, Time pred: {time.time()-time_pred :1.4f} s')
+                print('\n')
+
+            
+    def predict(self, inputs, labels):
+
+        pred = np.zeros_like(labels)
+
+        for sample_id in range(0,inputs.shape[0]):
+
+            output = self.forward_propagation(inputs[sample_id])
+            pred[sample_id] =output[-1][0]
+            
+        acc = np.mean(np.argmax(pred, axis=1) == np.argmax(labels, axis=1))
+
+        return pred, acc
+    
+
+    def update(self, learning_rate, batch_size):
+        for layer in self.layers:
+            if layer['layer_type'] == 'Conv2D':
+                layer['layer'].update(learning_rate, batch_size)
+            elif layer['layer_type'] == 'Dense':
+                layer['layer'].update(learning_rate, batch_size)
+        
+
+    def progress_bar(self, progress, total, time_0):
+        
+        percent = 100 * (progress /float(total))
+        bar = '█' * int(percent) + '-' * (100 - int(percent))
+        ETA_time = (total - progress) * (time.time() - time_0) / progress
+        print(f"\r|{bar}| {percent:.2f}%, ETA = {ETA_time :.2f}s, Time = {time.time()-time_0 :.2f}s, Samples Left = {total-progress} ", end="\r")
+
+
+</code></pre>
+
+
+        </section>
+
+        <section id="results">
+            <h2>Use Case</h2>
+            <p>In this project, I applied my custom-built Neural Network to solve the MNIST digit classification problem, a benchmark task in the field of machine learning. The goal was to train the model to recognize and classify handwritten digits from the MNIST dataset, which consists of 60,000 training images and 10,000 test images of digits ranging from 0 to 9. By implementing and fine-tuning the model from scratch in Python, I aimed to demonstrate the effectiveness of fundamental neural network principles and gain hands-on experience with real-world data.</p>
+            <ol>
+                <li>
+                    <h3>Dataset Preparation</h3>
+                    <p>The MNIST dataset was preprocessed by normalizing the pixel values of the images to a range between 0 and 1. Each image, originally a 28x28 pixel grayscale image, was flattened into a 784-dimensional vector to serve as input to the Neural Network. The labels, which indicate the digit represented in each image, were one-hot encoded to match the output layer's format.</p>
+                </li>       
+                <li>
+                    <h3>Model Architecture</h3>
+                    <p>The Neural Network architecture consisted of:
+
+                        Input Layer: 784 neurons corresponding to the 784 input features (pixels).
+                        Hidden Layer(s): One or more hidden layers, with each neuron employing a ReLU (Rectified Linear Unit) activation function to introduce non-linearity.
+                        Output Layer: 10 neurons, each representing one of the digit classes (0-9), with a softmax activation function to produce probabilities for each class.</p>
+                </li>
+                
+                <li>
+                    <h3>Training Process</h3>
+                    <p>The model was trained using the backpropagation algorithm combined with stochastic gradient descent (SGD) to minimize the cross-entropy loss. The training process involved multiple epochs, where the model iteratively adjusted its weights and biases based on the errors made on the training set. A small learning rate was used to ensure gradual convergence.
+
+                        Epochs: The model was trained over several epochs, each involving a complete pass through the training data.
+                        Batch Size: Mini-batches of data were used to update the model's parameters, balancing computational efficiency with effective learning.</p>
+                </li>
+                
+                <li>
+                    <h3>Results</h3>
+                    <p>After training, the model was evaluated on the MNIST test set, achieving a high level of accuracy. The model successfully classified the majority of the test images, demonstrating its ability to generalize from the training data to unseen examples.
+
+                        Accuracy: The model achieved an accuracy of approximately 95% on the test set.
+                        Loss: The loss function steadily decreased over the training epochs, indicating effective learning.
+                        Insert photo showing the accuracy and loss curves over training epochs</p>
+                </li>
+                
+                <li>
+                    <h3>Analysis</h3>
+                    <p>The results from the MNIST classification task validated the effectiveness of the custom Neural Network implementation. Despite being a basic model built from scratch, it was able to achieve competitive performance on a well-known benchmark problem. This demonstrates that even simple neural networks can solve complex tasks like digit classification when properly trained and tuned.</p>
+                </li>
+
+                <li>
+                    <h3>Conclusions</h3>
+                    <p>This project not only reinforced my understanding of Neural Networks but also showcased the practical application of deep learning techniques to real-world problems. The success of the model on the MNIST dataset lays the groundwork for exploring more advanced architectures and larger datasets in future projects.</p>
+                </li>
+            </ol>
+        </section>
+
+        <section id="conclusions">
+            <h2>Conclusions</h2>
+            <p>Final thoughts, conclusions, and future work.</p>
+        </section>
+    </section>
+   
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+            <p>Email: your.email@example.com | Phone: +123 456 7890</p>
+        </div>
+    </footer>
+</body>
+</html>

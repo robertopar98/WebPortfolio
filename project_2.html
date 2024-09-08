@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title - Portfolio</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="container">
+            <div class="nav-left">
+                <a href="index.html" class="logo">ROBERTO PARIENTE</a>
+            </div>
+            <nav class="nav-center">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                    <li><a href="portfolio.html">PORTFOLIO</a></li>
+                </ul>
+            </nav>
+            <div class="nav-right">
+                <!-- <a href="#" class="dark-mode-toggle">Dark Mode</a> -->
+                <img class="dark-mode-toggle-img" src="assets/images/day-mode-icon.png" alt="Toggle Dark Mode">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Project Content -->
+    <section class="project-container">
+        <div class="project-header">
+            <h1>Binary Classification of Poisonous Mushrooms</h1>
+            <p>Built a Classification Machine Learning model that predicts whether a mushroom is poisonous or edible. Demostration 
+                of Data Preprocessing, Data Analysis and Machine Learning application using large datasets.
+            </p>
+        </div>
+    </section>
+
+    <section class="project-sections">
+        <section id="description">
+            <h2>Project Description</h2>
+            <p>This project is focus on solving a Binary Classification problem: identifying whether a mushrooms is poisonous
+                or edible based on its characteristics. The dataset used in this project is provided by the Kaggle Playground
+                Series (Season 4, Episode 8) and contains variety of categorical features (color, shape, types) and numerical
+                features (height, width or diameter).
+            </p>
+            <p> The primary goal of the project is to accurately classify mushrooms using an optimized model that generalizes well, 
+                avoiding overfitting and ensuring a balance between prediction accuracy and computational efficiency.
+            </p>    
+            <p> Through this project, I demonstrate my ability to apply Machine Learning techniques, such as Data Preprocessing,
+                Exploratory Data Analysis (EDA), hyperparameter tuning, model selection and evaluation, all while leveraring tools
+                like XGBoost or LightGBM for an efficient classification.
+            </p>
+        </section>
+
+        <section id="data-overview">
+            <h2>Data Overview</h2>
+            <p>The dataset used for training in this project comes from a large collection of over 3 million mushroom records, 
+                containing 22 features and a target variable (class) that indicates whether a mushroom is poisonous or edible. 
+                The features include a mix of categorical and numerical data, which describe various physical characteristics of 
+                mushrooms such as cap shape, gill color, stem height, and more. </p>
+
+            <p>The dataset includes:</p>
+            
+            <li>Numerical Features: These include cap-diameter, stem-height, and stem-width, which provide measurements of 
+                different parts of the mushrooms.</li>
+                    
+            <li>Categorical Features: There are 18 categorical features such as cap-shape, cap-surface, gill-color, and 
+                spore-print-color, which describe the visual characteristics of mushrooms.</li>
+            
+            <h3>Missing Values</h3>
+            <p>Several features in the dataset have a substantial amount of missing data, with over 60% of values missing. To assess
+                 whether these features are essential for the model, we performed a Cramér's V analysis and Chi-square contingency test.
+                  These tests help determine the association between each feature and the target variable. Features with weak 
+                  associations and significant missing values may be candidates for removal, while those with strong associations might
+                   be filled using appropriate imputation methods. This ensures that we do not discard features that could provide 
+                   valuable insights despite their missing data.
+            </p>
+            
+            <h3>Class Distribution</h3>
+            <p>The dataset contains a slightly imbalanced distribution between edible and poisonous mushrooms. Approximately 1.7 million
+                 records are poisonous, and 1.4 million are edible. Although the class imbalance exists, it is not extreme enough to 
+                 require specialized techniques like oversampling or undersampling. Therefore, we proceed without applying 
+                 class-balancing methods, considering the classifier's robustness should suffice for this level of imbalance.
+            </p>
+            <p><img src="assets/images/project-2/class-distribution.png" alt="Class Distribution" width="50%"></p>
+
+        </section>
+
+        <section id="EDA">
+            <h2>Exploratory Data Analysis (EDA)</h2>
+            <p>Exploratory Data Analysis (EDA) is a critical step in understanding the dataset's characteristics and identifying patterns
+                or anomalies. In this section, we perform a comprehensive EDA on the poisonous mushrooms dataset to uncover insights and 
+                inform the model development process.</p>
+            
+            <h3>Univariate Analysis</h3>
+            <p>We began our univariate analysis by examining the distribution of numerical features and detecting outliers. Histograms and 
+                boxplots were utilized to visualize the distribution of these features. Outlier detection was performed using the quartile 
+                method, specifically focusing on the 5% and 95% percentiles. For instance, the 'cap-diameter' feature exhibited around 13,000 
+                outliers, which prompted us to carefully consider their impact on model performance. Given that outliers can significantly 
+                affect the results, we explored transformations such as Box-Cox to normalize the feature distributions and mitigate the influence 
+                of extreme values. This step is crucial as it ensures the robustness of our models by reducing the distortion caused by outliers.
+            </p>
+            <p><img src="assets/images/project-2/numerical-distribution.png" alt="Numerical Features Distribution" width="100%"></p>
+            <p></p><img src="assets/images/project-2/numerical-outliers.png" alt="Numerical Features Outliers" width="100%"></p>
+
+            <h3>Bivariate Analysis</h3>
+            <p>We performed a detailed examination of categorical features with respect to the target variable ('class'). This included generating
+                count plots to visualize the distribution of each categorical feature for the different classes—'edible' and 'poisonous'. 
+                Additionally, a stacked bar plot was created to illustrate the distribution of unique values within each categorical feature based
+                on the class. These visualizations help in understanding the relationship between categorical variables and the target variable, 
+                providing insights into which features are most informative for classification.
+            </p>
+            <p><img src="assets/images/project-2/categorical-distribution.png" alt="Categorical Features Distribution" width="100%"></p>
+            <p></p><img src="assets/images/project-2/categorical-stack.png" alt="Categorical Features Stack" width="100%"></p>
+
+            <h3>Correlation Analysis</h3>
+            <p>Correlation Matrix</p>
+            <p>A correlation matrix was constructed to analyze the relationships between numerical features. This matrix helps in identifying any 
+                strong correlations among features, which can be useful for feature selection and engineering.
+                <p><img src="assets/images/project-2/matrix-correlation.png" alt="Numerical Matrix Correlation" width="50%"></p>
+
+            <p>Chi-Square Test of Independence</p>
+            <p>To evaluate the strength of the association between categorical features and the target variable, we conducted the Chi-Square test of 
+                independence. This statistical test assesses whether there is a significant association between categorical variables. 
+
+            <p>cap-shape is important. (p = 0.0)
+                cap-surface is important. (p = 0.0)
+                cap-color is important. (p = 0.0)
+                does-bruise-or-bleed is important. (p = 0.0)
+                gill-attachment is important. (p = 0.0)
+                gill-spacing is important. (p = 0.0)
+                gill-color is important. (p = 0.0)
+                stem-root is important. (p = 0.0)
+                stem-surface is important. (p = 0.0)
+                stem-color is important. (p = 0.0)
+                veil-type is NOT important. (p = 0.376834406766713)
+                veil-color is important. (p = 0.0)
+                has-ring is important. (p = 0.0)
+                ring-type is important. (p = 0.0)
+                spore-print-color is important. (p = 0.0)
+                habitat is important. (p = 0.0)
+                season is important. (p = 0.0).
+            </p>
+        
+            <p>Correlation Matrix</p>
+            <p>The Cramer's V statistic was used to quantify the strength of these associations, with values closer to 1 indicating a stronger association. 
+                <p>Cramér's V for cap-shape: 0.16758160704788502
+                    Cramér's V for cap-surface: 0.28326698831439157
+                    Cramér's V for cap-color: 0.25858065433019356
+                    Cramér's V for does-bruise-or-bleed: 0.03771020194582898
+                    Cramér's V for gill-attachment: 0.23847435890870206
+                    Cramér's V for gill-spacing: 0.14030592873570533
+                    Cramér's V for gill-color: 0.22004630748878576
+                    Cramér's V for stem-root: 0.5208859629250661
+                    Cramér's V for stem-surface: 0.3571923993372263
+                    Cramér's V for stem-color: 0.25733743093758404
+                    Cramér's V for veil-type: 0.011852228407852968
+                    Cramér's V for veil-color: 0.4959072676433823
+                    Cramér's V for has-ring: 0.04975408583110642
+                    Cramér's V for ring-type: 0.19680659830911812
+                    Cramér's V for spore-print-color: 0.4257473802241635
+                    Cramér's V for habitat: 0.17769899730679842
+                    Cramér's V for season: 0.1492085758124336</p>
+
+            </p>
+
+            <p>Based on these results, decisions were made regarding the importance of each categorical feature and whether they should be retained 
+                or imputed.</p>
+
+
+        </section>
+
+
+        <section id="feature-engineering">
+            <h2>Feature Engineering</h2>
+            <p>Dend</p>
+
+        </section>
+
+        <section id="model-dev">
+            <h2>Exploratory Data Analysis (EDA)</h2>
+            <p>Dense Class:</p>
+
+        </section>
+
+        <section id="results">
+            <h2>Use Case</h2>
+           
+        </section>
+
+        <section id="conclusions">
+            <h2>Conclusions</h2>
+        </section>
+    </section>
+   
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+            <p>Email: your.email@example.com | Phone: +123 456 7890</p>
+        </div>
+    </footer>
+</body>
+</html>
