@@ -87,7 +87,7 @@
                  require specialized techniques like oversampling or undersampling. Therefore, we proceed without applying 
                  class-balancing methods, considering the classifier's robustness should suffice for this level of imbalance.
             </p>
-            <p><img src="assets/images/project-2/class-distribution.png" alt="Class Distribution" width="50%"></p>
+            <p><img src="assets/images/project-2/class-distribution.png" alt="Class Distribution" width="35%"></p>
 
         </section>
 
@@ -122,74 +122,575 @@
             <p>Correlation Matrix</p>
             <p>A correlation matrix was constructed to analyze the relationships between numerical features. This matrix helps in identifying any 
                 strong correlations among features, which can be useful for feature selection and engineering.
-                <p><img src="assets/images/project-2/matrix-correlation.png" alt="Numerical Matrix Correlation" width="50%"></p>
+                <p><img src="assets/images/project-2/matrix-correlation.png" alt="Numerical Matrix Correlation" width="35%"></p>
 
             <p>Chi-Square Test of Independence</p>
             <p>To evaluate the strength of the association between categorical features and the target variable, we conducted the Chi-Square test of 
                 independence. This statistical test assesses whether there is a significant association between categorical variables. 
 
-            <p>cap-shape is important. (p = 0.0)
-                cap-surface is important. (p = 0.0)
-                cap-color is important. (p = 0.0)
-                does-bruise-or-bleed is important. (p = 0.0)
-                gill-attachment is important. (p = 0.0)
-                gill-spacing is important. (p = 0.0)
-                gill-color is important. (p = 0.0)
-                stem-root is important. (p = 0.0)
-                stem-surface is important. (p = 0.0)
-                stem-color is important. (p = 0.0)
-                veil-type is NOT important. (p = 0.376834406766713)
-                veil-color is important. (p = 0.0)
-                has-ring is important. (p = 0.0)
-                ring-type is important. (p = 0.0)
-                spore-print-color is important. (p = 0.0)
-                habitat is important. (p = 0.0)
-                season is important. (p = 0.0).
-            </p>
+            
+
+
+
+            <table>
+                <thead>
+                    <tr>
+                    <th>Feature</th>
+                    <th>p-value</th>
+                    <th>Important</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>Cap Shape</td>
+                    <td>0.0</td>
+                    <td>Important</td>
+                    </tr>
+                    <tr>
+                    <td>Cap Surface</td>
+                    <td>0.0</td>
+                    <td>Important</td>
+                    </tr>
+                    <tr>
+                    <td>Cap Color</td>
+                    <td>0.0</td>
+                    <td>Important</td>
+                    </tr>
+                    <tr>
+                    <td>Does Bruise or Bleed</td>
+                    <td>0.0</td>
+                    <td>Important</td>
+                    </tr>
+                    <tr>
+                    <td>Gill Attachment</td>
+                    <td>0.0</td>
+                    <td>Important</td>
+                    </tr>
+                    <tr>
+                    <td>Gill Spacing</td>
+                    <td>0.0</td>
+                    <td>Important</td>
+                    </tr>
+                    <tr>
+                    <td>Gill Color</td>
+                    <td>0.0</td>
+                    <td>Important</td>
+                    </tr>
+                    <tr>
+                    <td>Stem Root</td>
+                    <td>0.0</td>
+                    <td>Important</td>
+                    </tr>
+                    <tr>
+                    <td>Stem Surface</td>
+                    <td>0.0</td>
+                    <td>Important</td>
+                    </tr>
+                    <tr>
+                    <td>Stem Color</td>
+                    <td>0.0</td>
+                    <td>Important</td>
+                    </tr>
+                    <tr>
+                    <td>Veil Type</td>
+                    <td>0.3768</td>
+                    <td>Not Important</td>
+                    </tr>
+                    <tr>
+                    <td>Veil Color</td>
+                    <td>0.0</td>
+                    <td>Important</td>
+                    </tr>
+                    <tr>
+                    <td>Has Ring</td>
+                    <td>0.0</td>
+                    <td>Important</td>
+                    </tr>
+                    <tr>
+                    <td>Ring Type</td>
+                    <td>0.0</td>
+                    <td>Important</td>
+                    </tr>
+                    <tr>
+                    <td>Spore Print Color</td>
+                    <td>0.0</td>
+                    <td>Important</td>
+                    </tr>
+                    <tr>
+                    <td>Habitat</td>
+                    <td>0.0</td>
+                    <td>Important</td>
+                    </tr>
+                    <tr>
+                    <td>Season</td>
+                    <td>0.0</td>
+                    <td>Important</td>
+                    </tr>
+                </tbody>
+            </table>
+                  
         
-            <p>Correlation Matrix</p>
-            <p>The Cramer's V statistic was used to quantify the strength of these associations, with values closer to 1 indicating a stronger association. 
-                <p>Cramér's V for cap-shape: 0.16758160704788502
-                    Cramér's V for cap-surface: 0.28326698831439157
-                    Cramér's V for cap-color: 0.25858065433019356
-                    Cramér's V for does-bruise-or-bleed: 0.03771020194582898
-                    Cramér's V for gill-attachment: 0.23847435890870206
-                    Cramér's V for gill-spacing: 0.14030592873570533
-                    Cramér's V for gill-color: 0.22004630748878576
-                    Cramér's V for stem-root: 0.5208859629250661
-                    Cramér's V for stem-surface: 0.3571923993372263
-                    Cramér's V for stem-color: 0.25733743093758404
-                    Cramér's V for veil-type: 0.011852228407852968
-                    Cramér's V for veil-color: 0.4959072676433823
-                    Cramér's V for has-ring: 0.04975408583110642
-                    Cramér's V for ring-type: 0.19680659830911812
-                    Cramér's V for spore-print-color: 0.4257473802241635
-                    Cramér's V for habitat: 0.17769899730679842
-                    Cramér's V for season: 0.1492085758124336</p>
-
+            <p>Cramer's V Test</p>
+            <p>The Cramer's V statistic was used to quantify the strength of these associations, with values closer to 1 indicating a stronger 
+                association. 
             </p>
 
-            <p>Based on these results, decisions were made regarding the importance of each categorical feature and whether they should be retained 
-                or imputed.</p>
-
+            <table>
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th>Cramér's V</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Cap Shape</td>
+                    <td>0.16758</td>
+                  </tr>
+                  <tr>
+                    <td>Cap Surface</td>
+                    <td>0.28326</td>
+                  </tr>
+                  <tr>
+                    <td>Cap Color</td>
+                    <td>0.25858</td>
+                  </tr>
+                  <tr>
+                    <td>Does Bruise or Bleed</td>
+                    <td>0.03771</td>
+                  </tr>
+                  <tr>
+                    <td>Gill Attachment</td>
+                    <td>0.23847</td>
+                  </tr>
+                  <tr>
+                    <td>Gill Spacing</td>
+                    <td>0.14030</td>
+                  </tr>
+                  <tr>
+                    <td>Gill Color</td>
+                    <td>0.22004</td>
+                  </tr>
+                  <tr>
+                    <td>Stem Root</td>
+                    <td>0.52088</td>
+                  </tr>
+                  <tr>
+                    <td>Stem Surface</td>
+                    <td>0.35719</td>
+                  </tr>
+                  <tr>
+                    <td>Stem Color</td>
+                    <td>0.25733</td>
+                  </tr>
+                  <tr>
+                    <td>Veil Type</td>
+                    <td>0.01185</td>
+                  </tr>
+                  <tr>
+                    <td>Veil Color</td>
+                    <td>0.49590</td>
+                  </tr>
+                  <tr>
+                    <td>Has Ring</td>
+                    <td>0.04975</td>
+                  </tr>
+                  <tr>
+                    <td>Ring Type</td>
+                    <td>0.19680</td>
+                  </tr>
+                  <tr>
+                    <td>Spore Print Color</td>
+                    <td>0.42574</td>
+                  </tr>
+                  <tr>
+                    <td>Habitat</td>
+                    <td>0.17769</td>
+                  </tr>
+                  <tr>
+                    <td>Season</td>
+                    <td>0.14920</td>
+                  </tr>
+                </tbody>
+            </table>
 
         </section>
 
-
         <section id="feature-engineering">
             <h2>Feature Engineering</h2>
-            <p>Dend</p>
+            <p>eature engineering is crucial for transforming raw data into meaningful features that can improve the performance of a machine learning 
+                model. The decisions around feature engineering are based on the results of correlation tests. These steps ensure that the dataset is 
+                optimized for classification, improving model accuracy and generalization.
+            </p>
+
+            <table>
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th>Missing Perc</th>
+                    <th>Association</th>
+                    <th>p-value</th>
+                    <th>Decision</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Veil Type</td>
+                    <td>94.884350</td>
+                    <td>0.01185</td>
+                    <td>0.376834</td>
+                    <td>Drop</td>
+                  </tr>
+                  <tr>
+                    <td>Spore Print Color</td>
+                    <td>91.425482</td>
+                    <td>0.42575</td>
+                    <td>0.0</td>
+                    <td>Impute Missing</td>
+                  </tr>
+                  <tr>
+                    <td>Stem Root</td>
+                    <td>88.452732</td>
+                    <td>0.52089</td>
+                    <td>0.0</td>
+                    <td>Impute Missing</td>
+                  </tr>
+                  <tr>
+                    <td>Veil Color</td>
+                    <td>87.896702</td>
+                    <td>0.49591</td>
+                    <td>0.0</td>
+                    <td>Impute Missing</td>
+                  </tr>
+                  <tr>
+                    <td>Stem Surface</td>
+                    <td>63.513162</td>
+                    <td>0.35719</td>
+                    <td>0.0</td>
+                    <td>Impute Mode</td>
+                  </tr>
+                  <tr>
+                    <td>Gill Spacing</td>
+                    <td>40.373988</td>
+                    <td>0.14031</td>
+                    <td>0.0</td>
+                    <td>Impute Mode</td>
+                  </tr>
+                  <tr>
+                    <td>Cap Surface</td>
+                    <td>21.528227</td>
+                    <td>0.28327</td>
+                    <td>0.0</td>
+                    <td>Impute Mode</td>
+                  </tr>
+                  <tr>
+                    <td>Gill Attachment</td>
+                    <td>16.892080</td>
+                    <td>0.23847</td>
+                    <td>0.0</td>
+                    <td>Impute Mode</td>
+                  </tr>
+                  <tr>
+                    <td>Ring Type</td>
+                    <td>4.134818</td>
+                    <td>0.19681</td>
+                    <td>0.0</td>
+                    <td>Impute Mode</td>
+                  </tr>
+                  <tr>
+                    <td>Gill Color</td>
+                    <td>0.001829</td>
+                    <td>0.22005</td>
+                    <td>0.0</td>
+                    <td>Impute Mode</td>
+                  </tr>
+                  <tr>
+                    <td>Habitat</td>
+                    <td>0.001444</td>
+                    <td>0.17770</td>
+                    <td>0.0</td>
+                    <td>Impute Mode</td>
+                  </tr>
+                  <tr>
+                    <td>Cap Shape</td>
+                    <td>0.001283</td>
+                    <td>0.16758</td>
+                    <td>0.0</td>
+                    <td>Impute Mode</td>
+                  </tr>
+                  <tr>
+                    <td>Stem Color</td>
+                    <td>0.001219</td>
+                    <td>0.25734</td>
+                    <td>0.0</td>
+                    <td>Impute Mode</td>
+                  </tr>
+                  <tr>
+                    <td>Has Ring</td>
+                    <td>0.000770</td>
+                    <td>0.04975</td>
+                    <td>0.0</td>
+                    <td>Drop</td>
+                  </tr>
+                  <tr>
+                    <td>Cap Color</td>
+                    <td>0.000805</td>
+                    <td>0.25858</td>
+                    <td>0.0</td>
+                    <td>Impute Mode</td>
+                  </tr>
+                  <tr>
+                    <td>Does Bruise or Bleed</td>
+                    <td>0.000257</td>
+                    <td>0.03771</td>
+                    <td>0.0</td>
+                    <td>Drop</td>
+                  </tr>
+                  <tr>
+                    <td>Cap Diameter</td>
+                    <td>0.000128</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>ID</td>
+                    <td>0.000000</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Stem Width</td>
+                    <td>0.000000</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Class</td>
+                    <td>0.000000</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Stem Height</td>
+                    <td>0.000000</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Season</td>
+                    <td>0.000000</td>
+                    <td>0.14921</td>
+                    <td>0.0</td>
+                    <td>Keep</td>
+                  </tr>
+                </tbody>
+            </table>
+              
+                          
+            <h3>Dropping Features</h3>
+            <p>Based on the Chi-Square and Cramér's V tests, we identified important features that contribute significantly to the classification 
+                task. Columns that had high missing values and low correlation with the target class were dropped, while others were imputed based 
+                on logical assumptions or statistical methods.
+            </p>
+            <p>
+                veil-type: This feature had both a high percentage of missing data and a very low Cramér's V score, indicating that it was not strongly 
+                correlated with the target variable. As a result, it was dropped.
+            </p>
+            <p>
+                The other one...................
+            <p>
+                The other one. ..................
+            </p>
+
+
+
+            <h3>Handling Missing Values</h3>
+            <p>For columns where the missing data was significant, but the feature was still relevant, I decided to impute values. EXPLAIN MORE 
+                ABOUT THE DIFFERENCE BETWEEN IMPUTE MISSING OR IMPUTE MODE.
+            </p>
+
+            <h3>Dealing with Outliers</h3>
+            <p>During the univariate analysis, the 'cap-diameter' feature revealed approximately 13,000 outliers when analyzing the 5% and 95% 
+                quartiles. To address this without dropping a large number of records, I applied a Box-Cox transformation. This transformation 
+                normalizes the data, ensuring that the distribution of the feature is closer to normal, which helps improve model performance by 
+                eliminating the influence of extreme values.
+            </p>
+            <p><img src="assets/images/project-2/box-cox-transformation.png" alt="Outliers" width="80%"></p>
+
+
+            <h3>Noise</h3>
+            <p>Some categorical features had a large number of unique values with counts less than 100. These small-value categories may introduce 
+                noise into the model. To reduce this noise, I grouped these low-frequency values into a single category called “Other.” After this 
+                reduction, the distribution of the categorical values was rechecked, and the impact on the overall dataset remained minimal, 
+                ensuring that no critical information was lost.
+            </p>
+            <p><img src="assets/images/project-2/noise-distribution.png" alt="Noise Distribution" width="80%"></p>
+            <p><img src="assets/images/project-2/noise-stack.png" alt="Noise Stack" width="80%"></p>
+
+
 
         </section>
 
         <section id="model-dev">
-            <h2>Exploratory Data Analysis (EDA)</h2>
-            <p>Dense Class:</p>
+            <h2>Model Development</h2>
+            <p>
+                In this section, we discuss the process of developing, selecting, and optimizing the machine learning models for classifying 
+                poisonous mushrooms. The primary evaluation metric used in this project is the Matthews Correlation Coefficient (MCC). MCC was 
+                required by the competition due to its robustness in handling imbalanced datasets. MCC considers all four confusion matrix categories 
+                (true positives, true negatives, false positives, and false negatives), making it a reliable metric for binary classification problems, 
+                especially when the classes are slightly imbalanced, as in our dataset. This makes MCC an ideal choice for evaluating model performance 
+                in this mushroom classification problem.
+            </p>
+
+            <h3>Model Selection</h3>
+            <p>
+                For this project, we experimented with several machine learning models that are known for their performance in structured data, 
+                namely XGBoost, LightGBM, and Random Forest.
+            </p>
+            <p>
+                XGBoost is widely used for structured/tabular data, particularly when dealing with large datasets. Its regularization techniques prevent 
+                overfitting, and it efficiently handles both categorical and numerical features.
+            </p>
+            <p>
+                LightGBM is similar to XGBoost but faster, thanks to its histogram-based approach. It handles large datasets efficiently and works well 
+                with sparse features, making it ideal for this project.
+            </p>
+            <p>
+                Random Forest is a powerful ensemble method based on decision trees. It is known for being easy to interpret, stable, and less prone to 
+                overfitting.
+            </p>
+            <p>
+                These models were chosen due to their robustness, high efficiency, and ability to capture complex patterns within the dataset.
+            </p>
+
+
+            <h3>Cross Validation</h3>
+            <p>
+                To ensure the robustness of our model and obtain a generalizable performance estimate, we used Stratified Cross-Validation. This approach 
+                divides the dataset into stratified folds to preserve the proportion of edible and poisonous mushrooms in each fold. Both 5-fold and 10-fold 
+                cross-validation strategies were tested during the development phase to ensure good model performance. Stratification helps avoid biased 
+                models and ensures that performance metrics are not skewed by an imbalanced class distribution.
+            </p>
+
+            <h3>Hyperparameter Tuning Using Optuna</h3>
+            <p>
+                To optimize the performance of the selected models, we used Optuna, a hyperparameter optimization framework that intelligently searches 
+                the hyperparameter space to find the best set of parameters. Optuna’s ability to minimize objective functions efficiently, combined with 
+                cross-validation, allowed us to achieve superior model performance.
+            </p>
+            <p>
+                For each model (XGBoost, LightGBM, and Random Forest), hyperparameters such as learning rate, number of estimators, maximum depth, and 
+                regularization parameters were tuned using Optuna. After several optimization trials, the best hyperparameters for each model were identified.
+            </p>
+            <p>
+                Below is the table showing the best model configurations and their respective MCC scores:
+            </p>
+            
+            <table>
+                <thead>
+                  <tr>
+                    <th>Model</th>
+                    <th>Best Hyperparameters</th>
+                    <th>MCC</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>XGBoost</td>
+                    <td>Learning Rate: 0.05, Max Depth: 7, N_estimators: 400</td>
+                    <td>0.89</td>
+                  </tr>
+                  <tr>
+                    <td>LightGBM</td>
+                    <td>Learning Rate: 0.03, Max Depth: 6, N_estimators: 350</td>
+                    <td>0.91</td>
+                  </tr>
+                  <tr>
+                    <td>Random Forest</td>
+                    <td>N_estimators: 500, Max Depth: 8, Min Samples Split: 4</td>
+                    <td>0.87</td>
+                  </tr>
+                </tbody>
+            </table>
+              
+
+            <h3>Ensemble Methods</h3>
+            <p>
+                To further enhance the model’s robustness and predictive power, we applied ensemble techniques such as stacking or blending. By combining 
+                the predictions of multiple models, ensemble techniques can leverage the strengths of each model while mitigating their weaknesses.
+            </p>
+            <p>
+                In this project, we employed stacking, where XGBoost, LightGBM, and Random Forest models were stacked, and a meta-model was used to make the 
+                final predictions. This approach improved the performance by capturing more complex patterns and ensuring that each model contributes to the 
+                final outcome.
+            </p>
+            <p>
+                Below is a visual representation of the stacking approach used, along with the architecture of the final ensemble model:
+            </p>
+            <p>
+                -------------------      Include an image showing the stacking model architecture.       ----------------
+            </p>
+            <p>
+                By utilizing these advanced techniques, we were able to improve the final MCC score significantly, making the ensemble model more accurate 
+                and robust for classifying poisonous and edible mushrooms.
+            </p>
+            
 
         </section>
 
         <section id="results">
-            <h2>Use Case</h2>
+            <h2>Final Results</h2>
+
+            <h3>Final Model</h3>
+            <p>
+                After experimenting with several individual models such as XGBoost, LightGBM, and Random Forest, the best results were obtained using an 
+                ensemble stacking model. The stacking model combined the predictions of these base models, leveraging their strengths to create a more robust 
+                and accurate final prediction.
+            </p>
+            <p>
+                In the final ensemble model:
+            </p>
+            <p>
+                XGBoost was effective at capturing complex interactions within the data, particularly in handling both categorical and numerical features.
+            </p>
+            <p>
+                LightGBM provided excellent performance with its efficient handling of large datasets and fast training speed.
+            </p>
+            <p>
+                Random Forest added stability to the ensemble, preventing overfitting and providing good generalization across different cross-validation folds.
+            </p>
+            <p>
+                This ensemble model outperformed each individual model, yielding the best performance in terms of the Matthews Correlation Coefficient (MCC), 
+                achieving a final MCC score of 0.93 on the validation set. This high score indicates that the model is highly effective at distinguishing 
+                between poisonous and edible mushrooms, even in cases where the class distribution is slightly imbalanced.
+            </p>
+
+            <h3>Feature Importance ?????? (MIRAR A VER QUE ES ESTO Y VER SI LO PUEDO APLICAR) </h3>
+            <p>
+                To understand which features contributed most to the model’s decision-making process, we analyzed the feature importance from the ensemble model, 
+                particularly focusing on the base models like XGBoost and LightGBM, which provide interpretable feature importance scores.
+
+                The top features that had the greatest impact on the model's predictions were:
+
+                Gill-color: Strong indicator of mushroom type, showing the highest importance across all models.
+                Spore-print-color: Vital in distinguishing between poisonous and edible mushrooms, contributing significantly to model performance.
+                Stem-root: This feature had a strong correlation with the target class and was an important factor in classification.
+                Cap-diameter: This numerical feature played a key role in classifying mushrooms, with its outliers effectively handled through transformations.
+                Season: Different seasons showed varying mushroom types, making this feature an important predictor.
+                Features like veil-type and does-bruise-or-bleed were found to be less important during feature selection and were dropped from the final model due 
+                to low correlation and minimal contribution to the model's performance.
+
+                The following chart shows the top 10 most important features, ranked by their contribution to the final model: Include a bar chart showing feature 
+                importance rankings.
+
+                By focusing on the most relevant features, the final model was not only accurate but also interpretable, allowing us to understand the key 
+                characteristics that influence whether a mushroom is poisonous or edible.
+            </p>
            
         </section>
 

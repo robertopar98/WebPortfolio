@@ -53,7 +53,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 60%;
+    max-width: 65%;
     margin: 0 auto;
 }
 
@@ -135,7 +135,7 @@ nav ul li a:hover {
 .dark-mode-toggle-img {
     position: relative;
     cursor: pointer;
-    width: 60px;
+    width: 30px;
     height: auto;
     transition: transform 0.3s ease;
 }
@@ -197,7 +197,10 @@ nav ul li a:hover {
 }
 
 .about-container {
+    position: relative;
     display: flex;
+    max-width: 70%;
+    margin: auto;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -212,7 +215,7 @@ nav ul li a:hover {
 }
 
 .about-text {
-    max-width: 600px;
+    max-width: 70%;
 }
 
 .about-text h2 {
@@ -244,7 +247,7 @@ nav ul li a:hover {
 }
 
 .about-buttons .btn:hover {
-    background-color: #555;
+    text-decoration: underline;
 }
 
 .about-buttons .btn.download {
@@ -257,8 +260,12 @@ nav ul li a:hover {
     background-color: var(--special-color);
 }
 
-.about-buttons .learn-more .arrow {
-    display: inline-block;
+.about-buttons .learn-more{
+    position: absolute;
+    bottom: 0px;
+    right: 30px;
+    color: var(--secondary-text-color);
+    background-color: var(--secondary-bg-color);
     transition: transform 0.3s ease;
 }
 
@@ -297,12 +304,13 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 60%;  /* Limit the width to prevent stretching across the screen */
+    max-width: 70%;  /* Limit the width to prevent stretching across the screen */
     margin: 0 auto;    /* Center the project list within the section */
     padding: 0px 20px;   /* Add padding for spacing on both sides */
 }
 
 .project-item {
+    position: relative;
     display: flex;
     align-items: center;
     padding: 5px;
@@ -342,6 +350,24 @@ nav ul li a:hover {
 .project-details a:hover {
     text-decoration: underline;
 }
+
+.learn-more-btn-index {
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    color: var(--secondary-text-color);
+    font-family:  'Rubik', sans-serif, monospace;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 10px;
+    align-self: flex-end;
+}
+
+.learn-more-btn-index:hover {
+    text-decoration: underline;
+}
+
+
 
 .browse-all-button {
     display: inline-block;
@@ -385,14 +411,14 @@ footer {
     display: flex;
     gap: 30px;
     padding: 40px 0;
-    max-width: 60%;
+    max-width: 70%;
     
 }
 
 /* Left Column for CV */
 .cv-left {
     flex: 1;
-    max-width: 250px;
+    max-width: 20%;
 }
 
 .profile-photo {
@@ -497,7 +523,7 @@ footer {
     flex-direction: column;
 }
 
-/* Main Projects Container */
+/* ######################################### Portfolio Section ###################################### */
 
 .portfolio-section {
     background-color: var(--primary-bg-color);
@@ -506,7 +532,7 @@ footer {
 }
 
 .projects-container {
-    max-width: 60%;
+    max-width: 70%;
     margin: 0 auto;
     padding: 40px 0;
     text-align: center;
@@ -520,6 +546,7 @@ footer {
 
 /* Project Card */
 .project-card {
+    position: relative;
     display: flex;
     background-color: var(--secondary-bg-color);
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
@@ -555,9 +582,13 @@ footer {
 }
 
 .learn-more-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
     text-decoration: none;
-    color: white;
-    background-color: var(--special-color);
+    color: var(--secondary-text-color);
+    background-color: var(--secondary-bg-color);
+    font-family:  'Rubik', sans-serif, monospace;
     padding: 10px 20px;
     border-radius: 5px;
     display: inline-block;
@@ -566,10 +597,11 @@ footer {
 }
 
 .learn-more-btn:hover {
-    background-color: #0056b3;
+    text-decoration: underline;
 }
 
 /* #################### Project #################### */
+
 .project-container {
     background-color: var(--primary-bg-color);
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
@@ -578,7 +610,7 @@ footer {
 
 .project-header {
     text-align: center;
-    max-width: 50%;
+    max-width: 70%;
     margin: auto;
     margin-bottom: 40px;
 }
@@ -616,7 +648,7 @@ footer {
 }
 
 .project-sections section {
-    width: 60%;
+    width: 70%;
     margin: 0 auto 20px;
 }
 
