@@ -1,0 +1,126 @@
+
+/* Main CV Container */
+.cv-section {
+    background-color: var(--primary-bg-color);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    color: var(--primary-text-color);
+}
+
+
+.cv-container {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    gap: 30px;
+    padding: 40px 0;
+    max-width: 70%;
+    
+}
+
+/* Left Column for CV */
+.cv-left {
+    flex: 1;
+    max-width: 20%;
+}
+
+.profile-photo {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.personal-info {
+    background-color: var(--secondary-bg-color);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.personal-info a{
+    padding-left: 5px;
+}
+
+.personal-info a img{
+    width: 30px;
+    height: 30px;
+}
+
+/* Right Column for CV */
+.cv-right {
+    flex: 3;
+}
+
+.cv-right section {
+    margin-bottom: 40px;
+}
+
+
+.cv-right h3 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: var(--primary-text-color);
+}
+
+.cv-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.cv-item-info {
+    flex: 1;
+    padding-left: 10px;
+}
+
+.cv-item-icon-left,
+.cv-item-icon-right {
+    display: flex;
+    align-items: center;
+}
+
+.cv-item-icon-left img,
+.cv-item-icon-right img {
+    width: 24px;
+    height: auto;
+}
+
+.cv-item-icon-left {
+    margin-right: 10px;
+}
+
+.cv-item h4 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.cv-item p {
+    margin: 5px 0;
+    color: var(--primary-text-color);
+}
+
+.cv-item-details {
+    display: none;
+    padding: 10px;
+    background-color: var(--secondary-bg-color);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+    margin-left: 40px;
+}
+
+.cv-item-details li {
+    margin-left: 10px;
+}
+
+.cv-item.open .cv-item-details {
+    display: block;
+}
+
+.cv-item.open {
+    flex-direction: column;
+}

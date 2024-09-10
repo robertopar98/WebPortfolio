@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roberto Pariente's Portfolio</title>
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/generic.css">
+    <link rel="stylesheet" href="assets/css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
 
@@ -13,14 +14,19 @@
 </head>
 
 <body>
-    
-    <!-- Navigation Bar -->
     <header>
         <div class="container">
             <div class="nav-left">
                 <a href="index.html" class="logo">ROBERTO PARIENTE</a>
             </div>
-            <nav class="nav-center">
+            <!-- Hamburger Menu Icon -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <div class="bar"> </div>
+                <div class="bar"> </div>
+                <div class="bar"> </div>
+            </div>
+            <!-- Navigation Menu -->
+            <nav class="nav-center" id="navLinks">
                 <ul>
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="cv.html">CV</a></li>
@@ -28,11 +34,31 @@
                 </ul>
             </nav>
             <div class="nav-right">
-                <!-- <a href="#" class="dark-mode-toggle">Dark Mode</a> -->
                 <img class="dark-mode-toggle-img" src="assets/images/day-mode-icon.png" alt="Toggle Dark Mode">
             </div>
         </div>
     </header>
+    
+    <!-- Navigation Bar
+    <header>
+        <div class="container">
+            <div class="nav-left">
+                <a href="index.html" class="logo">ROBERTO PARIENTE</a>
+            </div>
+
+            <nav class="nav-center">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                    <li><a href="portfolio.html">PORTFOLIO</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-right">
+                <img class="dark-mode-toggle-img" src="assets/images/day-mode-icon.png" alt="Toggle Dark Mode">
+            </div>
+        </div>
+    </header> -->
 
     <!-- Hero Section -->
     <section class="hero">
@@ -79,17 +105,26 @@
                     <p>Built a dashboard to track key business metrics.Analyzed customer survey data to identify trends.
                         Analyzed customer survey data to identify trends.Analyzed customer survey data to identify trends.
                         Analyzed customer survey data to identify trends.Analyzed customer survey data to identify trends.
-                        <a href="project_1.html" class="learn-more-btn-index">Learn more</a></p>
+                    </p>
+                    <p>
+                        <a href="project_1.html" class="learn-more-btn-index">Learn more</a>
+                    </p>
                 </div>
             </div>
             <div class="project-item">
-                <img src="assets/images/example_CNN.jpeg" alt="Convolutional Neural Network" class="project-icon">
+                <img src="assets/images/mushrooms.png" alt="Convolutional Neural Network" class="project-icon">
                 <div class="project-details">
-                    <h3>Convolutional Neural Network</h3>
-                    <p>Analyzed customer survey data to identify trends. Analyzed customer survey data to identify trends.
-                        Analyzed customer survey data to identify trends.Analyzed customer survey data to identify trends.
-                        Analyzed customer survey data to identify trends.Analyzed customer survey data to identify trends.
-                        <a href="iuguig.html" class="learn-more-btn-index">Learn more</a></p>
+                    <h3>Binary Classification of Poisonous Mushrooms</h3>
+                    <p>The Binary Classification of Poisonous Mushrooms project aims to build a machine learning 
+                        model to classify mushrooms as either poisonous or edible based on their physical characteristics.
+                    </p>
+                    <p> this project, I demonstrate my ability to apply Machine Learning techniques, such as Data 
+                        Preprocessing, Exploratory Data Analysis (EDA), hyperparameter tuning, model selection and evaluation,
+                        all while leveraring tools like XGBoost or LightGBM for an efficient classification. 
+                    </p>
+                    <p>
+                        <a href="project_2.html" class="learn-more-btn-index">Learn more</a>
+                    </p>
                 </div>
             </div>
             <div class="project-item">
@@ -99,7 +134,10 @@
                     <p>Performed A/B tests to optimize email campaigns.Analyzed customer survey data to identify trends.
                         Analyzed customer survey data to identify trends.Analyzed customer survey data to identify trends.
                         Analyzed customer survey data to identify trends.Analyzed customer survey data to identify trends.
-                        <a href="#" class="learn-more-btn-index">Learn more</a></p>
+                    </p>
+                    <p>
+                        <a href="#" class="learn-more-btn-index">Learn more</a>
+                    </p>
                 </div>
             </div>
             <a href="portfolio.html" class="browse-all-button">Browse All</a>

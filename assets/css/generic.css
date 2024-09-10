@@ -1,0 +1,206 @@
+/* Light Mode (Default) */
+:root {
+    --Navvar-bg-color: #eef0f2; 
+    --Navvar-text-color: #2c3441;
+    --Navvar-text-color-hover: #2c3441;
+    --primary-bg-color: #eef0f2; 
+    --primary-text-color: #2c3441;
+    --primary-text-color-hover: #2c3441;
+    --secondary-bg-color: #ccd7df;
+    --secondary-text-color: #2c3441;
+    --secondary-text-color-hover: #2c3441;
+    --footer-bg-color: #eef0f2;
+    --footer-text-color: #2c3441;
+    --footer-text-color-hover: #2c3441;
+
+    --special-color: #657de4;
+    --highlight-color: #121212;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+    
+    --Navvar-bg-color: #2b3746; 
+    --Navvar-text-color: #eef0f2;
+    --Navvar-text-color-hover: #eef0f2;
+    --primary-bg-color: #2b3746; 
+    --primary-text-color: #eef0f2;
+    --primary-text-color-hover: #eef0f2;
+    --secondary-bg-color: #1a2029;
+    --secondary-text-color: #eef0f2;
+    --secondary-text-color-hover: #eef0f2;
+    --footer-bg-color: #2b3746;
+    --footer-text-color: #eef0f2;
+    --footer-text-color-hover: #eef0f2;
+
+    /* Accent Colors */
+    --special-color: #657de4;
+    --highlight-color: #f6f4ec;
+}
+
+
+/* General Styles */
+body {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 65%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Navigation Bar */
+header {
+    background-color: var(--Navvar-bg-color);
+    height: 30px;
+    align-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    padding: 15px 0;
+    font-family:'Lucida Sans', sans-serif;
+    
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribute space between nav-left, nav-center, and nav-right */
+    padding: 0px 10px;
+}
+
+/* Align nav-left and nav-center next to each other */
+.nav-left {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Optional: adjust spacing between nav-left and nav-center */
+}
+
+.nav-center {
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Push nav-center next to nav-left */
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--Navvar-text-color);
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0px 0px 0px 0px;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--Navvar-text-color);
+    font-size: 1.1em;
+}
+
+nav ul li a:hover {
+    color: var(--Navvar-text-color-hover);
+    font-weight: bold;
+}
+
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;  /* Adjust width for better visibility */
+    height: 20px;
+    position: absolute;  /* Position the hamburger separately */
+    right: 60px;  /* Adjust positioning from right to prevent overlap with dark mode */
+    top: 15px;
+}
+
+.hamburger .bar {
+    width: 100%;  /* Full width */
+    height: 3px;
+    background-color: black;  /* Visible black bars */
+    margin: 3px 0;  /* Spacing between bars */
+}
+
+.nav-right {
+    font-size: 1em;
+}
+
+.dark-mode-toggle {
+    text-decoration: none;
+    color: var(--Navvar-text-color);
+    font-size: 1em;
+}
+
+.dark-mode-toggle:hover {
+    color: var(--Navvar-text-color-hover);
+}
+
+.dark-mode-toggle-img {
+    position: relative;
+    cursor: pointer;
+    width: 30px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+
+.dark-mode-toggle-img:hover {
+    transform: scale(1.2);
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg-color);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    color: var(--footer-text-color);
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+
+/* Responsive for Mobile Devices */
+@media screen and (max-width: 768px) {
+    .nav-center ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-center ul li {
+        margin: 10px 0;
+    }
+
+    /* Show Hamburger */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Toggle the menu when active */
+    .nav-center.active ul {
+        display: flex;
+    }
+}

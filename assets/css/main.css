@@ -687,3 +687,38 @@ footer {
     font-family: 'Courier New', Courier, monospace;
     color: #c7254e;
 }
+
+.intro-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+.description{
+    display: flex;
+}
+.description-text{
+    flex: 1.5;
+}
+
+.description-img {
+    flex: 1;
+    height: auto;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.description-img img {
+    max-width: 100%;
+    height: auto;
+}
+
+.overview-container img{
+    display: block;
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+  }

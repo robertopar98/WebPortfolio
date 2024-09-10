@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Title - Portfolio</title>
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/generic.css">
+    <link rel="stylesheet" href="assets/css/project_2.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="assets/js/main.js" defer></script>
@@ -32,32 +33,42 @@
 
     <!-- Main Project Content -->
     <section class="project-container">
-        <div class="project-header">
-            <h1>Binary Classification of Poisonous Mushrooms</h1>
-            <p>Built a Classification Machine Learning model that predicts whether a mushroom is poisonous or edible. Demostration 
-                of Data Preprocessing, Data Analysis and Machine Learning application using large datasets.
-            </p>
-        </div>
+      <div class="project-header">
+          <h1>Binary Classification of Poisonous Mushrooms</h1>
+          <p>Built a Classification Machine Learning model that predicts whether a mushroom is poisonous or edible. Demostration 
+              of Data Preprocessing, Data Analysis and Machine Learning application using large datasets.
+          </p>
+      </div>
     </section>
 
     <section class="project-sections">
+
         <section id="description">
-            <h2>Project Description</h2>
-            <p>This project is focus on solving a Binary Classification problem: identifying whether a mushrooms is poisonous
-                or edible based on its characteristics. The dataset used in this project is provided by the Kaggle Playground
-                Series (Season 4, Episode 8) and contains variety of categorical features (color, shape, types) and numerical
-                features (height, width or diameter).
-            </p>
-            <p> The primary goal of the project is to accurately classify mushrooms using an optimized model that generalizes well, 
-                avoiding overfitting and ensuring a balance between prediction accuracy and computational efficiency.
-            </p>    
-            <p> Through this project, I demonstrate my ability to apply Machine Learning techniques, such as Data Preprocessing,
-                Exploratory Data Analysis (EDA), hyperparameter tuning, model selection and evaluation, all while leveraring tools
-                like XGBoost or LightGBM for an efficient classification.
-            </p>
+          <div class="intro-container">
+            <div class="description-text">
+              <h2>Project Description</h2>
+              <p>This project is focus on solving a Binary Classification problem: identifying whether a mushrooms is poisonous
+                  or edible based on its characteristics. The dataset used in this project is provided by the Kaggle Playground
+                  Series (Season 4, Episode 8) and contains variety of categorical features (color, shape, types) and numerical
+                  features (height, width or diameter).
+              </p>
+              <p> The primary goal of the project is to accurately classify mushrooms using an optimized model that generalizes well, 
+                  avoiding overfitting and ensuring a balance between prediction accuracy and computational efficiency.
+              </p>    
+                    
+            </div>
+            <div class="description-img">
+              <img src="assets/images/project-2/kaggle-mushrooms.png" alt="Kaggle Image">
+            </div> 
+          </div>   
+          <p> Through this project, I demonstrate my ability to apply Machine Learning techniques, such as Data Preprocessing,
+            Exploratory Data Analysis (EDA), hyperparameter tuning, model selection and evaluation, all while leveraring tools
+            like XGBoost or LightGBM for an efficient classification.
+          </p> 
         </section>
 
         <section id="data-overview">
+          <div class="overview-container">
             <h2>Data Overview</h2>
             <p>The dataset used for training in this project comes from a large collection of over 3 million mushroom records, 
                 containing 22 features and a target variable (class) that indicates whether a mushroom is poisonous or edible. 
@@ -87,11 +98,12 @@
                  require specialized techniques like oversampling or undersampling. Therefore, we proceed without applying 
                  class-balancing methods, considering the classifier's robustness should suffice for this level of imbalance.
             </p>
-            <p><img src="assets/images/project-2/class-distribution.png" alt="Class Distribution" width="35%"></p>
-
+            <p><img src="assets/images/project-2/class-distribution.png" alt="Class Distribution"></p>
+          </div>
         </section>
 
         <section id="EDA">
+          <div class="EDA-container">
             <h2>Exploratory Data Analysis (EDA)</h2>
             <p>Exploratory Data Analysis (EDA) is a critical step in understanding the dataset's characteristics and identifying patterns
                 or anomalies. In this section, we perform a comprehensive EDA on the poisonous mushrooms dataset to uncover insights and 
@@ -313,7 +325,7 @@
                   </tr>
                 </tbody>
             </table>
-
+          </div>
         </section>
 
         <section id="feature-engineering">
