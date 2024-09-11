@@ -17,7 +17,14 @@
             <div class="nav-left">
                 <a href="index.html" class="logo">ROBERTO PARIENTE</a>
             </div>
-            <nav class="nav-center">
+            <!-- Hamburger Menu Icon -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <div class="bar"> </div>
+                <div class="bar"> </div>
+                <div class="bar"> </div>
+            </div>
+            <!-- Navigation Menu -->
+            <nav class="nav-center" id="navLinks">
                 <ul>
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="cv.html">CV</a></li>
@@ -25,7 +32,6 @@
                 </ul>
             </nav>
             <div class="nav-right">
-                <!-- <a href="#" class="dark-mode-toggle">Dark Mode</a> -->
                 <img class="dark-mode-toggle-img" src="assets/images/day-mode-icon.png" alt="Toggle Dark Mode">
             </div>
         </div>
@@ -38,21 +44,27 @@
             
             <!-- Project Card -->
             <div class="project-card">
-                <img src="assets/images/Neural_network_example.png" alt="Project 1" class="project-image">
+                <a href="project_1.html">
+                    <img src="assets/images/Neural_network_example.png" alt="Project 1" class="project-image">
+                </a>
                 <div class="project-info">
-                    <h3>Building a Neural Network from Scratch</h3>
+                    <a href="project_1.html">                    
+                        <h3>Building a Neural Network from Scratch</h3>
+                    </a>
                     <p>Built a simple Neural Network from scratch in Python to understand the core principles of deep learning,
                     including forward propagation, backpropagation, and gradient descent.</p>
-                    
-                    <a href="project_1.html" class="learn-more-btn">Learn More</a>
                 </div>
             </div>
 
             <!-- Repeat Project Cards as needed -->
             <div class="project-card">
-                <img src="assets/images/mushrooms.png" alt="Project 2" class="project-image">
+                <a href="project_1.html"> 
+                    <img src="assets/images/mushrooms.png" alt="Project 2" class="project-image">
+                </a>
                 <div class="project-info">
-                    <h3>Binary Classification of Poisonous Mushrooms</h3>
+                    <a href="project_1.html"> 
+                        <h3>Binary Classification of Poisonous Mushrooms</h3>
+                    </a>
                     <p>The Binary Classification of Poisonous Mushrooms project aims to build a machine learning 
                         model to classify mushrooms as either poisonous or edible based on their physical characteristics.
                     </p>
@@ -60,7 +72,6 @@
                         Preprocessing, Exploratory Data Analysis (EDA), hyperparameter tuning, model selection and evaluation,
                         all while leveraring tools like XGBoost or LightGBM for an efficient classification. 
                     </p>
-                    <a href="project_2.html" class="learn-more-btn">Learn More</a>
                 </div>
             </div>
 

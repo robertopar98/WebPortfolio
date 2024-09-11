@@ -186,7 +186,7 @@
 .project-details h3 {
     margin: 0;
     font-size: 1.2em;
-    color: var(--primary-text-color);
+    color: var(--special-color);
     font-weight: bold;
 }
 
@@ -196,29 +196,14 @@
 }
 
 .project-details a {
-    color: var(--special-color);
     text-decoration: none;
 }
 
 .project-details a:hover {
     text-decoration: underline;
+    text-decoration-color: var(--special-color);
 }
 
-.learn-more-btn-index {
-    position: absolute;
-    bottom: 0px;
-    right: 10px;
-    color: var(--secondary-text-color);
-    font-family:  'Rubik', sans-serif, monospace;
-    padding: 10px 20px;
-    display: inline-block;
-    margin-top: 10px;
-    align-self: flex-end;
-}
-
-.learn-more-btn-index:hover {
-    text-decoration: underline;
-}
 
 .browse-all-button {
     display: inline-block;
@@ -241,11 +226,21 @@
 
 /* Responsive for Mobile Devices */
 @media screen and (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3em;
+    }
+    .hero-content p {
+        font-size: 1.1em;
+    }
+
     .about-container {
         max-width: 100%;
     }
     .about-text {
         max-width: 90%;
+    }
+    .about-buttons .learn-more{
+        right: 0px;
     }
     .project-list{
         max-width: 100%;
@@ -255,8 +250,8 @@
         margin-bottom: 10px;
         justify-content: space-between;
     }
-    .learn-more-btn-index {
-        bottom: -20px;
+    .project-details{
+        margin-top: 10px;
     }
     .browse-all-button{
         margin-left: auto;
