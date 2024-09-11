@@ -3,6 +3,7 @@
     background-color: var(--primary-bg-color);
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
     color: var(--primary-text-color);
+    padding-bottom: 600px;
 }
 
 .projects-container {

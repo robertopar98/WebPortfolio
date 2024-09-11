@@ -226,6 +226,9 @@
 
 /* Responsive for Mobile Devices */
 @media screen and (max-width: 768px) {
+    .hero{
+        padding: 20px 20px 50px;
+    }
     .hero-content h1 {
         font-size: 3em;
     }
@@ -236,6 +239,12 @@
     .about-container {
         max-width: 100%;
     }
+    .about-photo img {
+        width: 200px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
     .about-text {
         max-width: 90%;
     }
