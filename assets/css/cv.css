@@ -20,7 +20,7 @@
 /* Left Column for CV */
 .cv-left {
     flex: 1;
-    max-width: 20%;
+    max-width: 25%;
 }
 
 .profile-photo {
@@ -38,6 +38,7 @@
 
 .personal-info a{
     padding-left: 5px;
+    text-decoration: none;
 }
 
 .personal-info a img{
@@ -61,6 +62,15 @@
     color: var(--primary-text-color);
 }
 
+.cv-summary h3{
+    font-size: 1.5em;
+}
+
+.cv-summary p{
+    font-size: 1.2em;
+    text-align: justify;
+}
+
 .cv-item {
     display: flex;
     align-items: flex-start;
@@ -72,6 +82,10 @@
 .cv-item-info {
     flex: 1;
     padding-left: 10px;
+}
+
+.cv-item-info .date-info {
+    font-size: 0.9em;
 }
 
 .cv-item-icon-left,
@@ -153,6 +167,9 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .cv-summary p{
+        font-size: 0.9em;
+    }
     .cv-right section {
         margin-bottom: 0px;
     }
@@ -162,5 +179,8 @@
     .cv-item-details{
         font-size: 0.9em;
         max-width: 80%;
+    }
+    .cv-item-info .date-info {
+        font-size: 0.8em;
     }
 }

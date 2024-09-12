@@ -65,11 +65,13 @@
     font-size: 20px;
     color: var(--secondary-text-color);
     line-height: 1.6;
+    text-align: justify;
 }
 .project-sections p {
     font-size: 20px;
     color: var(--secondary-text-color);
     line-height: 1.6;
+    text-align: justify;
 }
 
 .project-sections pre {
@@ -98,6 +100,7 @@
 
 .description-text{
     flex: 1.5;
+
 }
 
 .description-img {
@@ -127,7 +130,9 @@ img{
     margin-right: auto;
 }
 
-
+.table-overview{
+    width: 50%;
+}
 .table-chi{
     width: 50%;
 }
@@ -138,7 +143,7 @@ img{
     width: 100%;
 }
 .table-models{
-    width: 80%;
+    width: 100%;
 }
   
 table {
@@ -149,6 +154,8 @@ table {
     font-family: 'Arial', sans-serif;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow-x: auto;
+    table-layout: fixed;
+    
 }
 
 th, td {
@@ -216,7 +223,19 @@ tr:hover td {
         width: 100%;
     }
     tr, th {
-        font-size: 0.4em;
+        font-size: 0.7em;
+    }
+    .table-overview{
+        width: 80%;
+    }
+    .table-chi{
+        width: 80%;
+    }
+    .table-cramer{
+        width: 80%;
+    }
+    .table-models{
+        width: 100%;
     }
 
 }

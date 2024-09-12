@@ -41,8 +41,7 @@
     <section class="project-container">
       <div class="project-header">
           <h1>Binary Classification of Poisonous Mushrooms</h1>
-          <p>Built a Classification Machine Learning model that predicts whether a mushroom is poisonous or edible. Demostration 
-              of Data Preprocessing, Data Analysis and Machine Learning application using large datasets.
+          <p>Built a Classification Machine Learning model that predicts whether a mushroom is poisonous or edible. Demostration of Data Preprocessing, Data Analysis and Machine Learning application using large datasets.
           </p>
       </div>
     </section>
@@ -53,106 +52,211 @@
           <div class="intro-container">
             <div class="description-text">
               <h2>Project Description</h2>
-              <p>This project is focus on solving a Binary Classification problem: identifying whether a mushrooms is poisonous
-                  or edible based on its characteristics. The dataset used in this project is provided by the Kaggle Playground
-                  Series (Season 4, Episode 8) and contains variety of categorical features (color, shape, types) and numerical
-                  features (height, width or diameter).
-              </p>
-              <p> The primary goal of the project is to accurately classify mushrooms using an optimized model that generalizes well, 
-                  avoiding overfitting and ensuring a balance between prediction accuracy and computational efficiency.
-              </p>    
-                    
+                <p>
+                  This project addresses a binary classification challenge: determining whether mushrooms are poisonous or edible based on their characteristics. Using a Kaggle dataset with a variety of categorical and numerical features, the goal is to develop an optimized, accurate classification model that balances prediction performance with computational efficiency.
+                </p>
+                <p>
+                  The project showcases skills in data preprocessing, exploratory analysis, hyperparameter tuning, and model evaluation, utilizing techniques such as XGBoost and LightGBM for robust classification.
+                </p>         
             </div>
+
             <div class="description-img">
               <img src="assets/images/project-2/kaggle-mushrooms.png" alt="Kaggle Image">
             </div> 
-          </div>   
-          <p> Through this project, I demonstrate my ability to apply Machine Learning techniques, such as Data Preprocessing,
-            Exploratory Data Analysis (EDA), hyperparameter tuning, model selection and evaluation, all while leveraring tools
-            like XGBoost or LightGBM for an efficient classification.
-          </p> 
+          </div>
         </section>
 
         <section id="data-overview">
           <div class="overview-container">
             <h2>Data Overview</h2>
-            <p>The dataset used for training in this project comes from a large collection of over 3 million mushroom records, 
-                containing 22 features and a target variable (class) that indicates whether a mushroom is poisonous or edible. 
-                The features include a mix of categorical and numerical data, which describe various physical characteristics of 
-                mushrooms such as cap shape, gill color, stem height, and more. </p>
-
-            <p>The dataset includes:</p>
-            
-            <li>Numerical Features: These include cap-diameter, stem-height, and stem-width, which provide measurements of 
-                different parts of the mushrooms.</li>
-                    
-            <li>Categorical Features: There are 18 categorical features such as cap-shape, cap-surface, gill-color, and 
-                spore-print-color, which describe the visual characteristics of mushrooms.</li>
+            <p>
+              The dataset contains over 3 million mushroom records, featuring 22 attributes—both categorical (e.g., cap shape, gill color) and numerical (e.g., cap diameter, stem height). Categorical features are highly descriptive of mushroom appearance, while numerical features provide measurement data.
+            </p>
             
             <h3>Missing Values</h3>
-            <p>Several features in the dataset have a substantial amount of missing data, with over 60% of values missing. To assess
-                 whether these features are essential for the model, we performed a Cramér's V analysis and Chi-square contingency test.
-                  These tests help determine the association between each feature and the target variable. Features with weak 
-                  associations and significant missing values may be candidates for removal, while those with strong associations might
-                   be filled using appropriate imputation methods. This ensures that we do not discard features that could provide 
-                   valuable insights despite their missing data.
+            <p>
+              Several features in the dataset have a substantial amount of missing data, with over 60% of values missing. To assess whether these features are essential for the model, we performed a Cramér's V analysis and Chi-square contingency test.
             </p>
+
+            <table class="table-overview">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Data Type</th>
+                  <th>Missing Values (%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Veil Type</td>
+                  <td>Categorical</td>
+                  <td>94.88%</td>
+                </tr>
+                <tr>
+                  <td>Spore Print Color</td>
+                  <td>Categorical</td>
+                  <td>91.43%</td>
+                </tr>
+                <tr>
+                  <td>Stem Root</td>
+                  <td>Categorical</td>
+                  <td>88.45%</td>
+                </tr>
+                <tr>
+                  <td>Veil Color</td>
+                  <td>Categorical</td>
+                  <td>87.90%</td>
+                </tr>
+                <tr>
+                  <td>Stem Surface</td>
+                  <td>Categorical</td>
+                  <td>63.51%</td>
+                </tr>
+                <tr>
+                  <td>Gill Spacing</td>
+                  <td>Categorical</td>
+                  <td>40.37%</td>
+                </tr>
+                <tr>
+                  <td>Cap Surface</td>
+                  <td>Categorical</td>
+                  <td>21.53%</td>
+                </tr>
+                <tr>
+                  <td>Gill Attachment</td>
+                  <td>Categorical</td>
+                  <td>16.89%</td>
+                </tr>
+                <tr>
+                  <td>Ring Type</td>
+                  <td>Categorical</td>
+                  <td>4.13%</td>
+                </tr>
+                <tr>
+                  <td>Gill Color</td>
+                  <td>Categorical</td>
+                  <td>0.00183%</td>
+                </tr>
+                <tr>
+                  <td>Habitat</td>
+                  <td>Categorical</td>
+                  <td>0.00144%</td>
+                </tr>
+                <tr>
+                  <td>Cap Shape</td>
+                  <td>Categorical</td>
+                  <td>0.00128%</td>
+                </tr>
+                <tr>
+                  <td>Stem Color</td>
+                  <td>Categorical</td>
+                  <td>0.00122%</td>
+                </tr>
+                <tr>
+                  <td>Has Ring</td>
+                  <td>Categorical</td>
+                  <td>0.00077%</td>
+                </tr>
+                <tr>
+                  <td>Cap Color</td>
+                  <td>Categorical</td>
+                  <td>0.00080%</td>
+                </tr>
+                <tr>
+                  <td>Does Bruise or Bleed</td>
+                  <td>Categorical</td>
+                  <td>0.00026%</td>
+                </tr>
+                <tr>
+                  <td>Cap Diameter</td>
+                  <td>Numerical</td>
+                  <td>0.00013%</td>
+                </tr>
+                <tr>
+                  <td>ID</td>
+                  <td>Numerical</td>
+                  <td>0.00000%</td>
+                </tr>
+                <tr>
+                  <td>Stem Width</td>
+                  <td>Numerical</td>
+                  <td>0.00000%</td>
+                </tr>
+                <tr>
+                  <td>Class</td>
+                  <td>Categorical</td>
+                  <td>0.00000%</td>
+                </tr>
+                <tr>
+                  <td>Stem Height</td>
+                  <td>Numerical</td>
+                  <td>0.00000%</td>
+                </tr>
+                <tr>
+                  <td>Season</td>
+                  <td>Categorical</td>
+                  <td>0.00000%</td>
+                </tr>
+              </tbody>
+            </table>
             
             <h3>Class Distribution</h3>
-            <p>The dataset contains a slightly imbalanced distribution between edible and poisonous mushrooms. Approximately 1.7 million
-                 records are poisonous, and 1.4 million are edible. Although the class imbalance exists, it is not extreme enough to 
-                 require specialized techniques like oversampling or undersampling. Therefore, we proceed without applying 
-                 class-balancing methods, considering the classifier's robustness should suffice for this level of imbalance.
+            <p>
+              The dataset contains a slightly imbalanced distribution between edible and poisonous mushrooms. Approximately 1.7 million records are poisonous, and 1.4 million are edible. Although the class imbalance exists, it is not extreme enough to require specialized techniques like oversampling or undersampling.
             </p>
-            <p><img src="assets/images/project-2/class-distribution.png" alt="Class Distribution"></p>
+            
+            <p>
+              <img src="assets/images/project-2/class-distribution.png" alt="Class Distribution">
+            </p>
+
           </div>
         </section>
 
         <section id="EDA">
           <div class="EDA-container">
             <h2>Exploratory Data Analysis (EDA)</h2>
-            <p>Exploratory Data Analysis (EDA) is a critical step in understanding the dataset's characteristics and identifying patterns
-                or anomalies. In this section, we perform a comprehensive EDA on the poisonous mushrooms dataset to uncover insights and 
-                inform the model development process.</p>
+            
+            <p>Exploratory Data Analysis (EDA) is a critical step in understanding the dataset's characteristics and identifying patterns or anomalies. In this section, a comprehensive EDA is performed on the poisonous mushrooms dataset to uncover insights and inform the model development process.</p>
             
             <h3>Univariate Analysis</h3>
-            <p>We began our univariate analysis by examining the distribution of numerical features and detecting outliers. Histograms and 
-                boxplots were utilized to visualize the distribution of these features. Outlier detection was performed using the quartile 
-                method, specifically focusing on the 5% and 95% percentiles. For instance, the 'cap-diameter' feature exhibited around 13,000 
-                outliers, which prompted us to carefully consider their impact on model performance. Given that outliers can significantly 
-                affect the results, we explored transformations such as Box-Cox to normalize the feature distributions and mitigate the influence 
-                of extreme values. This step is crucial as it ensures the robustness of our models by reducing the distortion caused by outliers.
+            
+            <p>
+              We analyzed the distribution of numerical features using histograms and boxplots. Outliers were detected using the quartile method, and transformations like Box-Cox were considered to normalize distributions. For example, the ‘cap-diameter’ feature had around 13,000 outliers, impacting model performance.
             </p>
+
             <p><img src="assets/images/project-2/numerical-distribution.png" alt="Numerical Features Distribution" width="100%"></p>
             <p></p><img src="assets/images/project-2/numerical-outliers.png" alt="Numerical Features Outliers" width="100%"></p>
 
             <h3>Bivariate Analysis</h3>
-            <p>We performed a detailed examination of categorical features with respect to the target variable ('class'). This included generating
-                count plots to visualize the distribution of each categorical feature for the different classes—'edible' and 'poisonous'. 
-                Additionally, a stacked bar plot was created to illustrate the distribution of unique values within each categorical feature based
-                on the class. These visualizations help in understanding the relationship between categorical variables and the target variable, 
-                providing insights into which features are most informative for classification.
+
+            <p>
+              We analyzed categorical features in relation to the target variable using count plots and stacked bar plots to visualize class distribution (edible vs. poisonous). This allowed us to identify informative features for classification.
             </p>
+
             <p><img src="assets/images/project-2/categorical-distribution.png" alt="Categorical Features Distribution" width="100%"></p>
             <p></p><img src="assets/images/project-2/categorical-stack.png" alt="Categorical Features Stack" width="100%"></p>
 
-            <h3>Correlation Analysis</h3>
-            <p>Correlation Matrix</p>
-            <p>A correlation matrix was constructed to analyze the relationships between numerical features. This matrix helps in identifying any 
-                strong correlations among features, which can be useful for feature selection and engineering.
-                <p><img src="assets/images/project-2/matrix-correlation.png" alt="Numerical Matrix Correlation" width="35%"></p>
+            <h3><strong>Correlation Analysis</strong></h3>
+            
+            <p><strong>Correlation Matrix</strong></p>
+            <p>
+              A correlation matrix was constructed to analyze the relationships between numerical features. This matrix helps in identifying any strong correlations among features, which can be useful for feature selection and engineering.
+            </p>    
+            <p><img src="assets/images/project-2/matrix-correlation.png" alt="Numerical Matrix Correlation" width="35%"></p>
+            <p>
+              It was observed that the numerical features do not exhibit strong correlations with one another, leading to the decision to retain all of them in the model.
+            </p>
 
-            <p>Chi-Square Test of Independence</p>
-            <p>To evaluate the strength of the association between categorical features and the target variable, we conducted the Chi-Square test of 
-                independence. This statistical test assesses whether there is a significant association between categorical variables. 
-
-
+            <p><strong>Chi-Square Test of Independence</strong></p>
+            <p>
+              To evaluate the strength of the association between categorical features and the target variable, we conducted the Chi-Square test of independence. This statistical test assesses whether there is a significant association between categorical variables. 
+            </p>
             <table class="table-chi">
                 <thead>
                     <tr>
                     <th>Feature</th>
                     <th>p-value</th>
-                    <th>Important</th>
+                    <th>Importance</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -243,13 +347,11 @@
                     </tr>
                 </tbody>
             </table>
-                  
-        
-            <p>Cramer's V Test</p>
-            <p>The Cramer's V statistic was used to quantify the strength of these associations, with values closer to 1 indicating a stronger 
-                association. 
+            
+            <p><strong>Cramer's V Test</strong></p>
+            <p>
+              The Cramer's V statistic was used to quantify the strength of these associations, with values closer to 1 indicating a stronger association. 
             </p>
-
             <table class="table-cramer">
                 <thead>
                   <tr>
@@ -328,14 +430,14 @@
                   </tr>
                 </tbody>
             </table>
+
           </div>
         </section>
 
         <section id="feature-engineering">
             <h2>Feature Engineering</h2>
-            <p>eature engineering is crucial for transforming raw data into meaningful features that can improve the performance of a machine learning 
-                model. The decisions around feature engineering are based on the results of correlation tests. These steps ensure that the dataset is 
-                optimized for classification, improving model accuracy and generalization.
+            <p>
+              Feature engineering involves transforming raw data into features that improve model performance. Decisions in this section are guided by the correlation tests, ensuring the dataset is optimized for accurate classification.
             </p>
 
             <table class="table-feature">
@@ -382,35 +484,35 @@
                     <td>63.513162</td>
                     <td>0.35719</td>
                     <td>0.0</td>
-                    <td>Impute Mode</td>
+                    <td>Impute Missing</td>
                   </tr>
                   <tr>
                     <td>Gill Spacing</td>
                     <td>40.373988</td>
                     <td>0.14031</td>
                     <td>0.0</td>
-                    <td>Impute Mode</td>
+                    <td>Impute Missing</td>
                   </tr>
                   <tr>
                     <td>Cap Surface</td>
                     <td>21.528227</td>
                     <td>0.28327</td>
                     <td>0.0</td>
-                    <td>Impute Mode</td>
+                    <td>Impute Missing</td>
                   </tr>
                   <tr>
                     <td>Gill Attachment</td>
                     <td>16.892080</td>
                     <td>0.23847</td>
                     <td>0.0</td>
-                    <td>Impute Mode</td>
+                    <td>Impute Missing</td>
                   </tr>
                   <tr>
                     <td>Ring Type</td>
                     <td>4.134818</td>
                     <td>0.19681</td>
                     <td>0.0</td>
-                    <td>Impute Mode</td>
+                    <td>Impute Missing</td>
                   </tr>
                   <tr>
                     <td>Gill Color</td>
@@ -506,216 +608,160 @@
                 </tbody>
             </table>
               
-                          
             <h3>Dropping Features</h3>
-            <p>Based on the Chi-Square and Cramér's V tests, we identified important features that contribute significantly to the classification 
-                task. Columns that had high missing values and low correlation with the target class were dropped, while others were imputed based 
-                on logical assumptions or statistical methods.
-            </p>
             <p>
-                veil-type: This feature had both a high percentage of missing data and a very low Cramér's V score, indicating that it was not strongly 
-                correlated with the target variable. As a result, it was dropped.
+              Based on the Chi-Square and Cramér's V tests, features with high missing values and low association with the target variable were dropped:
             </p>
-            <p>
-                The other one...................
-            <p>
-                The other one. ..................
-            </p>
-
-
+            <li>
+              <strong>Veil Type</strong>: Dropped due to high missing percentage, low correlation with the target class and a p-value above the threshold (0.05).
+            </li>
+            <li>
+              <strong>Has Ring</strong>: Dropped due to a very low correlation with the target class.
+            </li>
+            <li>
+              <strong>Does Bruise or Bleed</strong>: Dropped due to a very low correlation with the target class.
+            </li>
 
             <h3>Handling Missing Values</h3>
-            <p>For columns where the missing data was significant, but the feature was still relevant, I decided to impute values. EXPLAIN MORE 
-                ABOUT THE DIFFERENCE BETWEEN IMPUTE MISSING OR IMPUTE MODE.
+            <p>
+              Features with missing data that were still relevant to classification were imputed:
             </p>
+            <li>
+              <strong>Impute Missing</strong>: Applied when a feature had significant missing data but high association with the target class (e.g., Spore Print Color, Stem Root). Values were imputed using statistical methods.
+
+            </li>
+            <li>
+              <strong>Impute Mode</strong>: For features with a smaller percentage of missing values, the mode of the feature was used to fill gaps (e.g., Gill Color, Habitat).
+            </li>
 
             <h3>Dealing with Outliers</h3>
-            <p>During the univariate analysis, the 'cap-diameter' feature revealed approximately 13,000 outliers when analyzing the 5% and 95% 
-                quartiles. To address this without dropping a large number of records, I applied a Box-Cox transformation. This transformation 
-                normalizes the data, ensuring that the distribution of the feature is closer to normal, which helps improve model performance by 
-                eliminating the influence of extreme values.
+            <p>
+              During the univariate analysis, the 'cap-diameter' feature revealed approximately 13,000 outliers when analyzing the 5% and 95% quartiles. To address this without dropping a large number of records, Box-Cox transformation was applied. This transformation normalizes the data, ensuring that the distribution of the feature is closer to normal, which helps improve model performance by eliminating the influence of extreme values.
             </p>
-            <p><img src="assets/images/project-2/box-cox-transformation.png" alt="Outliers" width="80%"></p>
-
+            <p><img src="assets/images/project-2/box-cox-transformation.png" alt="Outliers" width="100%"></p>
 
             <h3>Noise</h3>
-            <p>Some categorical features had a large number of unique values with counts less than 100. These small-value categories may introduce 
-                noise into the model. To reduce this noise, I grouped these low-frequency values into a single category called “Other.” After this 
-                reduction, the distribution of the categorical values was rechecked, and the impact on the overall dataset remained minimal, 
-                ensuring that no critical information was lost.
+            <p>
+              Some categorical features contained categories with less than 100 occurrences. These were consolidated into an "Other" category to reduce noise without losing valuable information. After this reduction, the distribution of these features was checked to ensure that no critical data was removed.
             </p>
-            <p><img src="assets/images/project-2/noise-distribution.png" alt="Noise Distribution" width="80%"></p>
-            <p><img src="assets/images/project-2/noise-stack.png" alt="Noise Stack" width="80%"></p>
-
-
+            <p><img src="assets/images/project-2/noise-distribution.png" alt="Noise Distribution" width="100%"></p>
+            <p><img src="assets/images/project-2/noise-stack.png" alt="Noise Stack" width="100%"></p>
 
         </section>
 
         <section id="model-dev">
             <h2>Model Development</h2>
             <p>
-                In this section, we discuss the process of developing, selecting, and optimizing the machine learning models for classifying 
-                poisonous mushrooms. The primary evaluation metric used in this project is the Matthews Correlation Coefficient (MCC). MCC was 
-                required by the competition due to its robustness in handling imbalanced datasets. MCC considers all four confusion matrix categories 
-                (true positives, true negatives, false positives, and false negatives), making it a reliable metric for binary classification problems, 
-                especially when the classes are slightly imbalanced, as in our dataset. This makes MCC an ideal choice for evaluating model performance 
-                in this mushroom classification problem.
+              In this section, we outline the process of selecting, optimizing, and evaluating models for classifying poisonous mushrooms. We chose the Matthews Correlation Coefficient (MCC) as our primary evaluation metric due to its robustness in handling imbalanced datasets. MCC takes all confusion matrix categories into account, making it ideal for binary classification in this scenario.
             </p>
 
             <h3>Model Selection</h3>
             <p>
-                For this project, we experimented with several machine learning models that are known for their performance in structured data, 
-                namely XGBoost, LightGBM, and Random Forest.
+              We experimented with XGBoost, LightGBM, and Random Forest—all well-suited for structured data:
             </p>
-            <p>
-                XGBoost is widely used for structured/tabular data, particularly when dealing with large datasets. Its regularization techniques prevent 
-                overfitting, and it efficiently handles both categorical and numerical features.
-            </p>
-            <p>
-                LightGBM is similar to XGBoost but faster, thanks to its histogram-based approach. It handles large datasets efficiently and works well 
-                with sparse features, making it ideal for this project.
-            </p>
-            <p>
-                Random Forest is a powerful ensemble method based on decision trees. It is known for being easy to interpret, stable, and less prone to 
-                overfitting.
-            </p>
+            <li>
+              <strong>XGBoost</strong>: Excellent for large datasets, leveraging regularization to prevent overfitting.
+            </li>
+            <li>
+              <strong>LightGBM</strong>: Faster due to its histogram-based approach, handles sparse features efficiently.
+            </li>
+            <li>
+              <strong>Random Forest</strong>: An ensemble of decision trees, known for stability and ease of interpretation.
+            </li>
             <p>
                 These models were chosen due to their robustness, high efficiency, and ability to capture complex patterns within the dataset.
             </p>
 
-
             <h3>Cross Validation</h3>
             <p>
-                To ensure the robustness of our model and obtain a generalizable performance estimate, we used Stratified Cross-Validation. This approach 
-                divides the dataset into stratified folds to preserve the proportion of edible and poisonous mushrooms in each fold. Both 5-fold and 10-fold 
-                cross-validation strategies were tested during the development phase to ensure good model performance. Stratification helps avoid biased 
-                models and ensures that performance metrics are not skewed by an imbalanced class distribution.
+              To ensure model robustness, we applied Stratified Cross-Validation, which maintains the proportion of edible and poisonous mushrooms in each fold. 5-fold cross-validation was tested to prevent performance bias from class imbalance.
             </p>
 
             <h3>Hyperparameter Tuning Using Optuna</h3>
             <p>
-                To optimize the performance of the selected models, we used Optuna, a hyperparameter optimization framework that intelligently searches 
-                the hyperparameter space to find the best set of parameters. Optuna’s ability to minimize objective functions efficiently, combined with 
-                cross-validation, allowed us to achieve superior model performance.
-            </p>
-            <p>
-                For each model (XGBoost, LightGBM, and Random Forest), hyperparameters such as learning rate, number of estimators, maximum depth, and 
-                regularization parameters were tuned using Optuna. After several optimization trials, the best hyperparameters for each model were identified.
-            </p>
-            <p>
-                Below is the table showing the best model configurations and their respective MCC scores:
+              We used Optuna for hyperparameter optimization. By intelligently searching the hyperparameter space, Optuna identified the best parameters for each model, improving performance. The table below shows the best configurations and their MCC scores:
             </p>
             
             <table class="table-models">
                 <thead>
                   <tr>
-                    <th>Model</th>
+                    <th width=15%>Model</th>
                     <th>Best Hyperparameters</th>
-                    <th>MCC</th>
+                    <th width=10%>MCC</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>XGBoost</td>
-                    <td>Learning Rate: 0.05, Max Depth: 7, N_estimators: 400</td>
-                    <td>0.89</td>
+                    <td>{'max_depth': 38, 'learning_rate': 0.0262, 'n_estimators': 518, 'subsample': 0.8475, 'gamma': 3.5493}</td>
+                    <td>0.984328</td>
                   </tr>
                   <tr>
                     <td>LightGBM</td>
-                    <td>Learning Rate: 0.03, Max Depth: 6, N_estimators: 350</td>
-                    <td>0.91</td>
+                    <td>{'learning_rate': 0.0326, 'n_estimators': 976, 'max_depth': 12, 'num_leaves': 1135, 'feature_fraction': 0.6876}</td>
+                    <td>0.984056</td>
                   </tr>
                   <tr>
                     <td>Random Forest</td>
-                    <td>N_estimators: 500, Max Depth: 8, Min Samples Split: 4</td>
-                    <td>0.87</td>
+                    <td>{'n_estimators': 138, 'max_depth': 14, 'min_samples_split': 2, 'min_samples_leaf': 3, 'max_features': 'sqrt'}</td>
+                    <td>0.978417</td>
                   </tr>
                 </tbody>
             </table>
-              
 
             <h3>Ensemble Methods</h3>
             <p>
-                To further enhance the model’s robustness and predictive power, we applied ensemble techniques such as stacking or blending. By combining 
-                the predictions of multiple models, ensemble techniques can leverage the strengths of each model while mitigating their weaknesses.
+              To further enhance predictive power, we used stacking—combining the outputs of XGBoost, LightGBM, and Random Forest models, with a meta-model to generate final predictions. This method improved performance by capturing a broader range of patterns, resulting in a higher MCC score.
             </p>
-            <p>
-                In this project, we employed stacking, where XGBoost, LightGBM, and Random Forest models were stacked, and a meta-model was used to make the 
-                final predictions. This approach improved the performance by capturing more complex patterns and ensuring that each model contributes to the 
-                final outcome.
-            </p>
-            <p>
-                Below is a visual representation of the stacking approach used, along with the architecture of the final ensemble model:
-            </p>
-            <p>
-                -------------------      Include an image showing the stacking model architecture.       ----------------
-            </p>
-            <p>
-                By utilizing these advanced techniques, we were able to improve the final MCC score significantly, making the ensemble model more accurate 
-                and robust for classifying poisonous and edible mushrooms.
-            </p>
-            
 
         </section>
 
         <section id="results">
-            <h2>Final Results</h2>
+            <h2>Results</h2>
 
             <h3>Final Model</h3>
             <p>
-                After experimenting with several individual models such as XGBoost, LightGBM, and Random Forest, the best results were obtained using an 
-                ensemble stacking model. The stacking model combined the predictions of these base models, leveraging their strengths to create a more robust 
-                and accurate final prediction.
-            </p>
-            <p>
-                In the final ensemble model:
-            </p>
-            <p>
-                XGBoost was effective at capturing complex interactions within the data, particularly in handling both categorical and numerical features.
-            </p>
-            <p>
-                LightGBM provided excellent performance with its efficient handling of large datasets and fast training speed.
-            </p>
-            <p>
-                Random Forest added stability to the ensemble, preventing overfitting and providing good generalization across different cross-validation folds.
-            </p>
-            <p>
-                This ensemble model outperformed each individual model, yielding the best performance in terms of the Matthews Correlation Coefficient (MCC), 
-                achieving a final MCC score of 0.93 on the validation set. This high score indicates that the model is highly effective at distinguishing 
-                between poisonous and edible mushrooms, even in cases where the class distribution is slightly imbalanced.
+              After extensive experimentation with XGBoost, LightGBM, and Random Forest, the stacking ensemble model yielded the best results. By combining the strengths of these models, the ensemble delivered a robust and accurate final prediction.
             </p>
 
-            <!--
-            <h3>Feature Importance ?????? (MIRAR A VER QUE ES ESTO Y VER SI LO PUEDO APLICAR) </h3>
+            <li>
+              <strong>XGBoost</strong>: Captured complex interactions between features.
+            </li>
+            <li>
+              <strong>LightGBM</strong>: Efficiently handled large datasets with fast training times.
+            </li>
+            <li>
+              <strong>Random Forest</strong>: Provided stability and prevented overfitting.
+            </li>
             <p>
-                To understand which features contributed most to the model’s decision-making process, we analyzed the feature importance from the ensemble model, 
-                particularly focusing on the base models like XGBoost and LightGBM, which provide interpretable feature importance scores.
-
-                The top features that had the greatest impact on the model's predictions were:
-
-                Gill-color: Strong indicator of mushroom type, showing the highest importance across all models.
-                Spore-print-color: Vital in distinguishing between poisonous and edible mushrooms, contributing significantly to model performance.
-                Stem-root: This feature had a strong correlation with the target class and was an important factor in classification.
-                Cap-diameter: This numerical feature played a key role in classifying mushrooms, with its outliers effectively handled through transformations.
-                Season: Different seasons showed varying mushroom types, making this feature an important predictor.
-                Features like veil-type and does-bruise-or-bleed were found to be less important during feature selection and were dropped from the final model due 
-                to low correlation and minimal contribution to the model's performance.
-
-                The following chart shows the top 10 most important features, ranked by their contribution to the final model: Include a bar chart showing feature 
-                importance rankings.
-
-                By focusing on the most relevant features, the final model was not only accurate but also interpretable, allowing us to understand the key 
-                characteristics that influence whether a mushroom is poisonous or edible.
+              The final model achieved a Matthews Correlation Coefficient (MCC) of 0.98476, indicating strong performance in distinguishing between poisonous and edible mushrooms, even with a slightly imbalanced dataset.
             </p>
-            -->
+
+            <h3>Conclusions</h3>
+            <p>
+              The stacking ensemble model successfully addressed the challenges of this classification task. Its high MCC score demonstrates the model's robustness and ability to generalize well across different data partitions. The combination of multiple models allowed us to capture diverse patterns, leading to an effective solution for classifying mushrooms.            </p>
+
+            <h3>Future Improvements</h3>
+
+            <p>
+              Although the model performed well, there are areas for further enhancement:
+            </p>
+            <li>
+              <strong>Feature Engineering</strong>: Additional feature creation or domain-specific insights could improve the model's understanding of mushroom characteristics.
+            </li>
+            <li>
+              <strong>Data Augmentation</strong>: Techniques such as SMOTE or advanced data synthesis could help mitigate class imbalance further.
+            </li>
+            <li>
+              <strong>Model Interpretability</strong>: Integrating SHAP (Shapley Additive Explanations) could provide clearer insights into feature importance and model decision-making.
+            </li>
+            <li>
+              <strong>Hyperparameter Tuning</strong>: Experimenting with different optimization techniques or search spaces may yield even better model configurations.
+            </li>
+            
            
         </section>
 
-        <!--
-        <section id="conclusions">
-            <h2>Conclusions</h2>
-        </section>
-        -->
     </section>
    
 
