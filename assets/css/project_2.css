@@ -1,15 +1,14 @@
-
 .project-container {
     background-color: var(--primary-bg-color);
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
-    padding: 40px 0px 80px;
+    padding: 40px 0px;
 }
 
 .project-header {
     text-align: center;
     max-width: 70%;
     margin: auto;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
 }
 
 .project-header h1 {
@@ -18,10 +17,28 @@
 }
 
 .project-header p {
+    max-width: 80%;
+    margin: auto;
     font-size: 20px;
     color: var(--primary-text-color);
-    margin-top: 10px;
 }
+
+.project-skills {
+    background-color: var(--primary-bg-color);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    padding: 10px 0px 30px;
+}
+
+.project-skills-info {
+    text-align: left;
+    max-width: 60%;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    color: var(--primary-text-color);
+    font-size: 17px;
+}
+
 
 .project-sections {
     position: relative;
@@ -41,7 +58,7 @@
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
     clip-path: polygon(100% 0, 0 100%, 100% 100%);
     z-index: 1; /* Ensure it stays behind the content */
-    transform: translateY(-100%); /* Optional: adjusts the slant position */
+    transform: translateY(-98%); /* Optional: adjusts the slant position */
 }
 
 .project-sections section {
@@ -124,7 +141,13 @@
     margin-right: auto;
 }
 
-img{
+.EDA-container img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feature-container img{
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -187,16 +210,21 @@ tr:hover td {
 }
 
   /* Responsive for Mobile Devices */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1250px) {
     .project-header {
         max-width: 90%;
     }
     
     .project-header h1{
-        font-size: 35px;
+        font-size: 30px;
     }
     .project-header p{
+        max-width: 100%;
         font-size: 1.1em;
+    }
+    .project-skills-info {
+        max-width: 90%;
+        font-size: 0.75em;
     }
     .project-sections section {
         width: 90%;
@@ -226,13 +254,13 @@ tr:hover td {
         font-size: 0.7em;
     }
     .table-overview{
-        width: 80%;
+        width: 100%;
     }
     .table-chi{
-        width: 80%;
+        width: 100%;
     }
     .table-cramer{
-        width: 80%;
+        width: 100%;
     }
     .table-models{
         width: 100%;

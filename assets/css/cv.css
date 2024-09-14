@@ -20,11 +20,12 @@
 /* Left Column for CV */
 .cv-left {
     flex: 1;
-    max-width: 25%;
+    width: 25%;
+    max-width: 300px;
 }
 
 .profile-photo {
-    width: 100%;
+    max-width: 100%;
     border-radius: 10px;
     margin-bottom: 20px;
 }
@@ -36,6 +37,10 @@
     border-radius: 10px;
 }
 
+.personal-info img{
+    margin-right: 5px;
+}
+
 .personal-info a{
     padding-left: 5px;
     text-decoration: none;
@@ -44,6 +49,16 @@
 .personal-info a img{
     width: 30px;
     height: 30px;
+}
+
+.personal-info a img{
+    width: 30px;
+    height: 30px;
+}
+
+.personal-info p img{
+    width: 20px;
+    vertical-align: middle;
 }
 
 /* Right Column for CV */
@@ -58,12 +73,12 @@
 
 .cv-right h3 {
     margin-bottom: 20px;
-    font-size: 1.5em;
+    font-size: 1.8em;
     color: var(--primary-text-color);
 }
 
 .cv-summary h3{
-    font-size: 1.5em;
+    font-size: 1.8em;
 }
 
 .cv-summary p{
@@ -85,7 +100,7 @@
 }
 
 .cv-item-info .date-info {
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 .cv-item-icon-left,
@@ -98,6 +113,11 @@
 .cv-item-icon-right img {
     width: 24px;
     height: auto;
+
+}
+
+.cv-item-icon-right img {
+    cursor: pointer;
 }
 
 .cv-item-icon-left {
@@ -106,11 +126,12 @@
 
 .cv-item h4 {
     margin: 0;
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
 .cv-item p {
     margin: 5px 0;
+    font-size: 1.em;
     color: var(--primary-text-color);
 }
 
@@ -125,6 +146,8 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     line-height: 1.6;
     margin-left: 40px;
+    font-size: 1.1em;
+
 }
 
 .cv-item-details li {
@@ -139,11 +162,14 @@
     flex-direction: column;
 }
 
-
+.skills-section li{
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
 
 
 /* Responsive for Mobile Devices */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1250px) {
     .cv-container {
         display: inline;
         width: 80%;
@@ -151,6 +177,7 @@
 
     .profile-photo {
         width: 70%;
+        max-width: 250px;
         padding-top: 20px;
         margin-left: auto;
         margin-right: auto;
@@ -160,7 +187,9 @@
     .cv-left {
         margin-left: auto;
         margin-right: auto;
+        width: 100%;
         max-width: 80%;
+
     }
     .cv-right {
         max-width: 90%;
@@ -182,5 +211,9 @@
     }
     .cv-item-info .date-info {
         font-size: 0.8em;
+    }
+    .skills-section li{
+        font-size: 0.9em;
+        margin-bottom: 10px;
     }
 }

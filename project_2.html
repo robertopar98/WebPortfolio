@@ -44,6 +44,14 @@
           <p>Built a Classification Machine Learning model that predicts whether a mushroom is poisonous or edible. Demostration of Data Preprocessing, Data Analysis and Machine Learning application using large datasets.
           </p>
       </div>
+      <div class="project-skills-info">
+        <p>
+          <strong>Skills</strong>: EDA, Machine Learning, Classification, Python, sklearn, Data Cleaning
+        </p>
+        <p>
+          Roberto Pariente on September 7, 2024 | Reading Time: 7 minutes
+        </p>
+      </div>
     </section>
 
     <section class="project-sections">
@@ -225,7 +233,7 @@
             </p>
 
             <p><img src="assets/images/project-2/numerical-distribution.png" alt="Numerical Features Distribution" width="100%"></p>
-            <p></p><img src="assets/images/project-2/numerical-outliers.png" alt="Numerical Features Outliers" width="100%"></p>
+            <p><img src="assets/images/project-2/numerical-outliers.png" alt="Numerical Features Outliers" width="100%"></p>
 
             <h3>Bivariate Analysis</h3>
 
@@ -234,7 +242,7 @@
             </p>
 
             <p><img src="assets/images/project-2/categorical-distribution.png" alt="Categorical Features Distribution" width="100%"></p>
-            <p></p><img src="assets/images/project-2/categorical-stack.png" alt="Categorical Features Stack" width="100%"></p>
+            <p><img src="assets/images/project-2/categorical-stack.png" alt="Categorical Features Stack" width="100%"></p>
 
             <h3><strong>Correlation Analysis</strong></h3>
             
@@ -435,218 +443,219 @@
         </section>
 
         <section id="feature-engineering">
-            <h2>Feature Engineering</h2>
-            <p>
-              Feature engineering involves transforming raw data into features that improve model performance. Decisions in this section are guided by the correlation tests, ensuring the dataset is optimized for accurate classification.
-            </p>
+          <div class="feature-container">
+              <h2>Feature Engineering</h2>
+              <p>
+                Feature engineering involves transforming raw data into features that improve model performance. Decisions in this section are guided by the correlation tests, ensuring the dataset is optimized for accurate classification.
+              </p>
 
-            <table class="table-feature">
-                <thead>
-                  <tr>
-                    <th>Feature</th>
-                    <th>Missing Perc</th>
-                    <th>Association</th>
-                    <th>p-value</th>
-                    <th>Decision</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Veil Type</td>
-                    <td>94.884350</td>
-                    <td>0.01185</td>
-                    <td>0.376834</td>
-                    <td>Drop</td>
-                  </tr>
-                  <tr>
-                    <td>Spore Print Color</td>
-                    <td>91.425482</td>
-                    <td>0.42575</td>
-                    <td>0.0</td>
-                    <td>Impute Missing</td>
-                  </tr>
-                  <tr>
-                    <td>Stem Root</td>
-                    <td>88.452732</td>
-                    <td>0.52089</td>
-                    <td>0.0</td>
-                    <td>Impute Missing</td>
-                  </tr>
-                  <tr>
-                    <td>Veil Color</td>
-                    <td>87.896702</td>
-                    <td>0.49591</td>
-                    <td>0.0</td>
-                    <td>Impute Missing</td>
-                  </tr>
-                  <tr>
-                    <td>Stem Surface</td>
-                    <td>63.513162</td>
-                    <td>0.35719</td>
-                    <td>0.0</td>
-                    <td>Impute Missing</td>
-                  </tr>
-                  <tr>
-                    <td>Gill Spacing</td>
-                    <td>40.373988</td>
-                    <td>0.14031</td>
-                    <td>0.0</td>
-                    <td>Impute Missing</td>
-                  </tr>
-                  <tr>
-                    <td>Cap Surface</td>
-                    <td>21.528227</td>
-                    <td>0.28327</td>
-                    <td>0.0</td>
-                    <td>Impute Missing</td>
-                  </tr>
-                  <tr>
-                    <td>Gill Attachment</td>
-                    <td>16.892080</td>
-                    <td>0.23847</td>
-                    <td>0.0</td>
-                    <td>Impute Missing</td>
-                  </tr>
-                  <tr>
-                    <td>Ring Type</td>
-                    <td>4.134818</td>
-                    <td>0.19681</td>
-                    <td>0.0</td>
-                    <td>Impute Missing</td>
-                  </tr>
-                  <tr>
-                    <td>Gill Color</td>
-                    <td>0.001829</td>
-                    <td>0.22005</td>
-                    <td>0.0</td>
-                    <td>Impute Mode</td>
-                  </tr>
-                  <tr>
-                    <td>Habitat</td>
-                    <td>0.001444</td>
-                    <td>0.17770</td>
-                    <td>0.0</td>
-                    <td>Impute Mode</td>
-                  </tr>
-                  <tr>
-                    <td>Cap Shape</td>
-                    <td>0.001283</td>
-                    <td>0.16758</td>
-                    <td>0.0</td>
-                    <td>Impute Mode</td>
-                  </tr>
-                  <tr>
-                    <td>Stem Color</td>
-                    <td>0.001219</td>
-                    <td>0.25734</td>
-                    <td>0.0</td>
-                    <td>Impute Mode</td>
-                  </tr>
-                  <tr>
-                    <td>Has Ring</td>
-                    <td>0.000770</td>
-                    <td>0.04975</td>
-                    <td>0.0</td>
-                    <td>Drop</td>
-                  </tr>
-                  <tr>
-                    <td>Cap Color</td>
-                    <td>0.000805</td>
-                    <td>0.25858</td>
-                    <td>0.0</td>
-                    <td>Impute Mode</td>
-                  </tr>
-                  <tr>
-                    <td>Does Bruise or Bleed</td>
-                    <td>0.000257</td>
-                    <td>0.03771</td>
-                    <td>0.0</td>
-                    <td>Drop</td>
-                  </tr>
-                  <tr>
-                    <td>Cap Diameter</td>
-                    <td>0.000128</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                  </tr>
-                  <tr>
-                    <td>ID</td>
-                    <td>0.000000</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                  </tr>
-                  <tr>
-                    <td>Stem Width</td>
-                    <td>0.000000</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                  </tr>
-                  <tr>
-                    <td>Class</td>
-                    <td>0.000000</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                  </tr>
-                  <tr>
-                    <td>Stem Height</td>
-                    <td>0.000000</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                  </tr>
-                  <tr>
-                    <td>Season</td>
-                    <td>0.000000</td>
-                    <td>0.14921</td>
-                    <td>0.0</td>
-                    <td>Keep</td>
-                  </tr>
-                </tbody>
-            </table>
-              
-            <h3>Dropping Features</h3>
-            <p>
-              Based on the Chi-Square and Cramér's V tests, features with high missing values and low association with the target variable were dropped:
-            </p>
-            <li>
-              <strong>Veil Type</strong>: Dropped due to high missing percentage, low correlation with the target class and a p-value above the threshold (0.05).
-            </li>
-            <li>
-              <strong>Has Ring</strong>: Dropped due to a very low correlation with the target class.
-            </li>
-            <li>
-              <strong>Does Bruise or Bleed</strong>: Dropped due to a very low correlation with the target class.
-            </li>
+              <table class="table-feature">
+                  <thead>
+                    <tr>
+                      <th>Feature</th>
+                      <th>Missing Perc</th>
+                      <th>Association</th>
+                      <th>p-value</th>
+                      <th>Decision</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Veil Type</td>
+                      <td>94.884350</td>
+                      <td>0.01185</td>
+                      <td>0.376834</td>
+                      <td>Drop</td>
+                    </tr>
+                    <tr>
+                      <td>Spore Print Color</td>
+                      <td>91.425482</td>
+                      <td>0.42575</td>
+                      <td>0.0</td>
+                      <td>Impute Missing</td>
+                    </tr>
+                    <tr>
+                      <td>Stem Root</td>
+                      <td>88.452732</td>
+                      <td>0.52089</td>
+                      <td>0.0</td>
+                      <td>Impute Missing</td>
+                    </tr>
+                    <tr>
+                      <td>Veil Color</td>
+                      <td>87.896702</td>
+                      <td>0.49591</td>
+                      <td>0.0</td>
+                      <td>Impute Missing</td>
+                    </tr>
+                    <tr>
+                      <td>Stem Surface</td>
+                      <td>63.513162</td>
+                      <td>0.35719</td>
+                      <td>0.0</td>
+                      <td>Impute Missing</td>
+                    </tr>
+                    <tr>
+                      <td>Gill Spacing</td>
+                      <td>40.373988</td>
+                      <td>0.14031</td>
+                      <td>0.0</td>
+                      <td>Impute Missing</td>
+                    </tr>
+                    <tr>
+                      <td>Cap Surface</td>
+                      <td>21.528227</td>
+                      <td>0.28327</td>
+                      <td>0.0</td>
+                      <td>Impute Missing</td>
+                    </tr>
+                    <tr>
+                      <td>Gill Attachment</td>
+                      <td>16.892080</td>
+                      <td>0.23847</td>
+                      <td>0.0</td>
+                      <td>Impute Missing</td>
+                    </tr>
+                    <tr>
+                      <td>Ring Type</td>
+                      <td>4.134818</td>
+                      <td>0.19681</td>
+                      <td>0.0</td>
+                      <td>Impute Missing</td>
+                    </tr>
+                    <tr>
+                      <td>Gill Color</td>
+                      <td>0.001829</td>
+                      <td>0.22005</td>
+                      <td>0.0</td>
+                      <td>Impute Mode</td>
+                    </tr>
+                    <tr>
+                      <td>Habitat</td>
+                      <td>0.001444</td>
+                      <td>0.17770</td>
+                      <td>0.0</td>
+                      <td>Impute Mode</td>
+                    </tr>
+                    <tr>
+                      <td>Cap Shape</td>
+                      <td>0.001283</td>
+                      <td>0.16758</td>
+                      <td>0.0</td>
+                      <td>Impute Mode</td>
+                    </tr>
+                    <tr>
+                      <td>Stem Color</td>
+                      <td>0.001219</td>
+                      <td>0.25734</td>
+                      <td>0.0</td>
+                      <td>Impute Mode</td>
+                    </tr>
+                    <tr>
+                      <td>Has Ring</td>
+                      <td>0.000770</td>
+                      <td>0.04975</td>
+                      <td>0.0</td>
+                      <td>Drop</td>
+                    </tr>
+                    <tr>
+                      <td>Cap Color</td>
+                      <td>0.000805</td>
+                      <td>0.25858</td>
+                      <td>0.0</td>
+                      <td>Impute Mode</td>
+                    </tr>
+                    <tr>
+                      <td>Does Bruise or Bleed</td>
+                      <td>0.000257</td>
+                      <td>0.03771</td>
+                      <td>0.0</td>
+                      <td>Drop</td>
+                    </tr>
+                    <tr>
+                      <td>Cap Diameter</td>
+                      <td>0.000128</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>ID</td>
+                      <td>0.000000</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>Stem Width</td>
+                      <td>0.000000</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>Class</td>
+                      <td>0.000000</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>Stem Height</td>
+                      <td>0.000000</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>Season</td>
+                      <td>0.000000</td>
+                      <td>0.14921</td>
+                      <td>0.0</td>
+                      <td>Keep</td>
+                    </tr>
+                  </tbody>
+              </table>
+                
+              <h3>Dropping Features</h3>
+              <p>
+                Based on the Chi-Square and Cramér's V tests, features with high missing values and low association with the target variable were dropped:
+              </p>
+              <li>
+                <strong>Veil Type</strong>: Dropped due to high missing percentage, low correlation with the target class and a p-value above the threshold (0.05).
+              </li>
+              <li>
+                <strong>Has Ring</strong>: Dropped due to a very low correlation with the target class.
+              </li>
+              <li>
+                <strong>Does Bruise or Bleed</strong>: Dropped due to a very low correlation with the target class.
+              </li>
 
-            <h3>Handling Missing Values</h3>
-            <p>
-              Features with missing data that were still relevant to classification were imputed:
-            </p>
-            <li>
-              <strong>Impute Missing</strong>: Applied when a feature had significant missing data but high association with the target class (e.g., Spore Print Color, Stem Root). Values were imputed using statistical methods.
+              <h3>Handling Missing Values</h3>
+              <p>
+                Features with missing data that were still relevant to classification were imputed:
+              </p>
+              <li>
+                <strong>Impute Missing</strong>: Applied when a feature had significant missing data but high association with the target class (e.g., Spore Print Color, Stem Root). Values were imputed using statistical methods.
 
-            </li>
-            <li>
-              <strong>Impute Mode</strong>: For features with a smaller percentage of missing values, the mode of the feature was used to fill gaps (e.g., Gill Color, Habitat).
-            </li>
+              </li>
+              <li>
+                <strong>Impute Mode</strong>: For features with a smaller percentage of missing values, the mode of the feature was used to fill gaps (e.g., Gill Color, Habitat).
+              </li>
 
-            <h3>Dealing with Outliers</h3>
-            <p>
-              During the univariate analysis, the 'cap-diameter' feature revealed approximately 13,000 outliers when analyzing the 5% and 95% quartiles. To address this without dropping a large number of records, Box-Cox transformation was applied. This transformation normalizes the data, ensuring that the distribution of the feature is closer to normal, which helps improve model performance by eliminating the influence of extreme values.
-            </p>
-            <p><img src="assets/images/project-2/box-cox-transformation.png" alt="Outliers" width="100%"></p>
+              <h3>Dealing with Outliers</h3>
+              <p>
+                During the univariate analysis, the 'cap-diameter' feature revealed approximately 13,000 outliers when analyzing the 5% and 95% quartiles. To address this without dropping a large number of records, Box-Cox transformation was applied. This transformation normalizes the data, ensuring that the distribution of the feature is closer to normal, which helps improve model performance by eliminating the influence of extreme values.
+              </p>
+              <p><img src="assets/images/project-2/box-cox-transformation.png" alt="Outliers" width="100%"></p>
 
-            <h3>Noise</h3>
-            <p>
-              Some categorical features contained categories with less than 100 occurrences. These were consolidated into an "Other" category to reduce noise without losing valuable information. After this reduction, the distribution of these features was checked to ensure that no critical data was removed.
-            </p>
-            <p><img src="assets/images/project-2/noise-distribution.png" alt="Noise Distribution" width="100%"></p>
-            <p><img src="assets/images/project-2/noise-stack.png" alt="Noise Stack" width="100%"></p>
-
+              <h3>Noise</h3>
+              <p>
+                Some categorical features contained categories with less than 100 occurrences. These were consolidated into an "Other" category to reduce noise without losing valuable information. After this reduction, the distribution of these features was checked to ensure that no critical data was removed.
+              </p>
+              <p><img src="assets/images/project-2/noise-distribution.png" alt="Noise Distribution" width="100%"></p>
+              <p><img src="assets/images/project-2/noise-stack.png" alt="Noise Stack" width="100%"></p>
+          </div>
         </section>
 
         <section id="model-dev">
@@ -734,7 +743,7 @@
               <strong>Random Forest</strong>: Provided stability and prevented overfitting.
             </li>
             <p>
-              The final model achieved a Matthews Correlation Coefficient (MCC) of 0.98476, indicating strong performance in distinguishing between poisonous and edible mushrooms, even with a slightly imbalanced dataset.
+              The final model achieved a Matthews Correlation Coefficient (MCC) of <strong>0.98476</strong>, indicating strong performance in distinguishing between poisonous and edible mushrooms, even with a slightly imbalanced dataset.
             </p>
 
             <h3>Conclusions</h3>
@@ -767,10 +776,26 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Roberto Pariente</p>
-            <p>Email: roberto.par98@gmail.com</p>
-        </div>
-    </footer>
+      <div class="container">
+          <div class="container-left">
+              <p>&copy; 2024 Roberto Pariente.</p>
+          </div>
+          <div class="container-center">
+              <a href="https://www.linkedin.com/in/roberto-pariente-manso/">
+                  <img src="assets/images/linkedin.png" alt="LinkedIn">
+              </a>
+              <a href="https://github.com/robertopar98">
+                  <img src="assets/images/github1.png" alt="GitHub"> 
+              </a>
+              <a href="https://www.kaggle.com/robertopariente">
+                  <img src="assets/images/kaggle.png" alt="Kaggle"> 
+              </a>
+          </div>
+          <div class="container-right">
+              <p><img src="assets/images/gmail.png" alt="gmail"> : roberto.par98@gmail.com</p>
+              <p><img src="assets/images/phone.png" alt="phone"> : +34 656 303 454</p>
+          </div>
+      </div>
+  </footer>
 </body>
 </html>

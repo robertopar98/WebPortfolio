@@ -3,7 +3,7 @@
     background-color: var(--primary-bg-color);
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
     color: var(--primary-text-color);
-    padding-bottom: 600px;
+    padding-bottom: 280px;
 }
 
 .projects-container {
@@ -55,19 +55,21 @@
 }
 
 .project-info h3 {
-    margin: 0 0 10px 0;
-    font-size: 1.5em;
-    color: var(--secondary-text-color);
+    margin: 0 0 20px 0;
+    font-size: 28px;
+    color: var(--secondary-text-color);   
 }
 
 .project-info p {
-    margin: 0 0 20px 0;
+    margin: 0 0 10px 0;
     color: var(--secondary-text-color);
+    font-size: 18px;
+    text-align: justify;
 }
 
 
 /* Responsive for Mobile Devices */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1250px) {
     .projects-container {
         max-width: 90%;
         padding: 5px 0;

@@ -8,7 +8,7 @@
 
 .hero img{
     min-width: 120px;
-    width: 10%;
+    width: 8%;
     height: auto;
     padding: 0px 0px 5px;
 }
@@ -46,7 +46,7 @@
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
     clip-path: polygon(100% 0, 0 100%, 100% 100%);
     z-index: 1; /* Ensure it stays behind the content */
-    transform: translateY(-99.8%); /* Optional: adjusts the slant position */
+    transform: translateY(-95%); /* Optional: adjusts the slant position */
 }
 
 .about-container {
@@ -79,6 +79,7 @@
 .about-text p {
     color: var(--secondary-text-color);
     line-height: 1.6;
+    font-size: 18px;
 }
 
 .about-buttons {
@@ -142,13 +143,13 @@
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
     clip-path: polygon(100% 0, 0 100%, 100% 100%);
     z-index: 1; /* Ensure it stays behind the content */
-    transform: translateY(-100%); /* Optional: adjusts the slant position */
+    transform: translateY(-95%); /* Optional: adjusts the slant position */
 }
 
 .featured-projects h2 {
     margin-bottom: 20px;
     color: var(--primary-text-color);
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: bold;
     text-align: center; /* Center the heading */
 }
@@ -185,14 +186,18 @@
 
 .project-details h3 {
     margin: 0;
-    font-size: 1.2em;
+    font-size: 22px;
     color: var(--special-color);
     font-weight: bold;
+    margin-bottom: 15px;
 }
 
 .project-details p {
     margin: 5px 0 0;
     color: var(--primary-text-color);
+    font-size: 17px;
+    text-align: justify;
+
 }
 
 .project-details a {
@@ -209,8 +214,8 @@
     display: inline-block;
     max-width: 80px;
     text-align: center;
-    background-color: #333;
-    color: #fff;
+    background-color: var(--secondary-bg-color);
+    color: var(--secondary-text-color);
     padding: 10px 20px;
     margin-left: 5px;
     font-size: 1em;
@@ -225,7 +230,7 @@
 
 
 /* Responsive for Mobile Devices */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1250px) {
     .hero{
         padding: 20px 20px 50px;
     }

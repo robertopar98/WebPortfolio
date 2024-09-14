@@ -1,20 +1,26 @@
 
 function toggleDetails(iconElement) {
     const details = iconElement.nextElementSibling;
+    const iconImage = iconElement.querySelector('img');
+
     if (details.style.display === "block") {
         details.style.display = "none";
+        iconImage.src = "assets/images/down.png";
     } else {
         details.style.display = "block";
+        iconImage.src = "assets/images/up.png";
     }
 };
-
 
 
 
 document.addEventListener("DOMContentLoaded", function() {
     const darkModeToggle = document.querySelector('.dark-mode-toggle-img');
     const lightModeImage = 'assets/images/day-mode-icon.png';
-    const darkModeImage = 'assets/images/night-mode-icon.png';
+    const darkModeImage  = 'assets/images/night-mode-icon.png';
+
+
+
 
     // Check if there's a saved theme in localStorage
     const currentTheme = localStorage.getItem('theme');
@@ -49,7 +55,6 @@ document.addEventListener("DOMContentLoaded", function() {
             localStorage.setItem('theme', 'dark'); // Save preference in localStorage
             darkModeToggle.textContent = 'Light Mode'; // Update the button label
             darkModeToggle.src = darkModeImage;
-
         }
     });
 });
