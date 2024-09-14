@@ -169,7 +169,7 @@
 
 
 /* Responsive for Mobile Devices */
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 768px) {
     .cv-container {
         display: inline;
         width: 80%;

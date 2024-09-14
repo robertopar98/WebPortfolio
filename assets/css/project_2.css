@@ -210,7 +210,7 @@ tr:hover td {
 }
 
   /* Responsive for Mobile Devices */
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 768px) {
     .project-header {
         max-width: 90%;
     }

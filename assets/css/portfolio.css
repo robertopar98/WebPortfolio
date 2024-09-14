@@ -69,7 +69,7 @@
 
 
 /* Responsive for Mobile Devices */
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 768px) {
     .projects-container {
         max-width: 90%;
         padding: 5px 0;
